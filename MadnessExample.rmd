@@ -1,0 +1,157 @@
+
+```{r echo=F}
+
+setwd("I:\\My Data Sources\\classroom stuff\\")
+#grep("mad",dir(),value=T)
+filmQuiz<-read.csv(file="madMoviesFilmQuiz.csv")
+psychQuiz<-read.csv(file="madMoviesPsychQuiz.csv")
+
+#str(psychQuiz)
+
+#summary(psychQuiz)
+```
+
+
+Primer on Stats for Madness in Movies.
+========================================================
+
+Basic Statistical Understanding:
+Statistics in the context of psychological research basically does 2 things
+  1.  They help us distinguish groups.  Are they actually different?  Is there a difference between the numbers 10 and 2?  Yes.  What about the numbers 10 and 9?  Yes.  What about 10 and 9.9?  Well, yes, but does this difference really make a difference?  Without stats you canât know.
+  2.	If there is a difference between groups, are those differences due to chance?  Usually, researchers in social sciences are satisfied if the answer to this question is âyesâ 1 out of 20 times.  In other words, researchers will report a level of certainty at the 5% level (.05), which happens to be 1 out of 20.  Itâs a custom, which means the practice is to say that 1 out of 19 (.052) is not good enough.  
+
+Example: are there differences between men and women regarding their height?  To answer this, we first have to decide what do we mean by âheightâ and âsexâ, and then we have to decide how to best organize the information.  
+
+Vocabulary
+  1.	Operational Definition:
+    A clear description of the variable and the method of measuring it.  The purpose of operational definitions is for communication and replication.  By being clear, others can try and replicate your experiment.  
+    Height could be defined in feet, inches, centimeters, or parsecs.  Given we are in backwards USS, weâll use inches.  Importantly, we should measure people ourselves, at the same time of day (because we tend to shrink over the course of a day, and elongate while we sleep).  Note the need for control.  We donât want other variables (like time of day of measurement) to interfere with our research.
+
+    Sex is a bit more complicated.  Note that Iâm not using the term âGenderâ, which has a host of other concepts that would require definitions.  So, for an operational definition, Iâd use a self-report: with which biological sex to they identify.  
+
+  2.  Measures of Central Tendency
+    There are many ways to do this.  We could count the number of people with each height, for example.
+
+    But generally, we jump to a âMeasure of Central Tendencyâ, the most common of which include the average (or mean), the median (or 50th percentile), and the mode (the most frequent score).
+
+    The most common way to approach this is to look at the average between the two sexes.  Generally, worldwide, men are taller than women.  For example, Iâll make an assumption that on average, men are 69â, while women are 65â. (65 inches == 5â5.)
+
+Here is some data to show what this could look like, including their average, median, and mode:
+
+
+```{r echo=8:13}
+
+set.seed=30 #this lets me the same random numbers below
+fem_height<-rnorm(100,mean = 65, sd=1.2); male_height<-rnorm(100,mean = 69, 1.2) #this generates two samples of 100 with a mean and standard deviation
+
+#shows first 10 rows of a dataframe
+head(data.frame((fem_height), (male_height)),10)
+
+mean(fem_height)
+median (fem_height)
+mean(male_height)
+median (male_height)
+#the Mode doesn't work well in my randomly generate example.  But it's the most frequent score)
+```
+
+In this particular example, I've constructed this data to illustrate an assumed difference between the sexes.  If I were to try and show you how these two groups compare, I could draw a distrbution, where the verticle lines represent the means of each group, Females then Males:
+
+
+```{r}
+plot(density(male_height), col= 'blue',xlim = c(60,75), ylim = c(0,.5), main = "red = Female; blue =  Male")
+lines(density(fem_height),col='red')
+abline(v=mean(fem_height), col = 'red')
+abline(v=mean(male_height), col = 'blue')
+```
+
+
+Note about these distributions. These are basically histograms.  
+```{r}
+par(mfrow=c(1,2))
+plot(density(male_height), col= 'blue',xlim = c(60,75), ylim = c(0,.5), main = "red = Female; blue =  Male")
+lines(density(fem_height),col='red')
+abline(v=mean(fem_height), col = 'red')
+abline(v=mean(male_height), col = 'blue')
+
+
+hist((male_height), col= rgb(0,0,1,.5),xlim = c(60,75),  main = "red = Female; blue =  Male")
+hist(fem_height,col= rgb(1,0,0,.5),add=T)
+box()
+abline(v=mean(fem_height), col = 'red')
+abline(v=mean(male_height), col = 'blue')
+
+```
+
+
+
+
+
+Pretty obvious difference?  But consider a different set of groups, where they have the same average?
+
+```{r echo = c(1:6,14:17)}
+set.seed=30
+x<-rnorm(100,mean = 69, 3.2);y<-rnorm(100,mean = 69, .8)
+
+mean(x)
+mean(y)
+
+#par(mfrow=c(2,2))
+
+#hist(y,col='blue',main = "Male")
+#abline(v=mean(y), col = "black", lw=4)
+#hist(x,col='red', main = "Female")
+#abline(v=mean(x), col = "black", lw=4)
+
+plot(density(y), xlim = c(53,84), ylim = c(0,.5), col="blue", main = 'silly example, dashed verticle line is the average')
+lines(density(x),col='purple')
+abline(v=mean(x), col = 'black', lw=2, lt=2)
+
+```
+
+Here they have the same mean (the verticle line), but the spread, or variation is so different that it would not be smart to say that because these two groups of the same average that they are NOT different. Clearly, they ARE very different.
+
+
+So what am I trying to show with these examples, these distributions?  I'm trying to show how data "vary".  That is, even though they have an average, or mean, the way that the data are shaped around that average lets us make probablistic estimates of how likely it would be to randomly draw a particular score.  
+
+For example, let's say this silly example represents the heights of blue people and purple people.  And lets say I randomly drew a number from this distrubtion, say the height 66 inches. How likely is it that this data point comes from a purple person or blue person?  This is a relatively easy thing to calculate, but we aren't going to do that for this class.  Instead, you can just draw a line on that number, 66.5, and notice which distribution has more area under than particular number?  
+
+```{r}
+plot(density(y), xlim = c(53,84), ylim = c(0,.5), col="blue", main = 'silly example, dashed verticle line is a random height of 66.5')
+lines(density(x),col='purple')
+abline(v=66.5, col = 'black', lw=2, lt=2)
+
+```
+
+Purple!!!!
+
+
+
+The point here is that statistics use variation as much as averages to determine whether two groups are different.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+For the first article on Social Support and Suicide, the following vocabulary words will be necessary:
+Mediator
+Moderator
+Cross Sectional Design
+Bootstrapping
+Operational Definitions
+Validity 
+Reliability
+
+
+
