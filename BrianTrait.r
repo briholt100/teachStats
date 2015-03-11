@@ -11,6 +11,8 @@ for (i in 1:5){boxplot(trait[,i],ylim=yrng,main=dimnames(trait)[[2]][i])
                for (j in 1:nrow(trait)){
                 points(trait[j,i],col=j,pch=19)
                 text(.65,trait[j,i],dimnames(trait)[[1]][j],cex=3,col=j)
-                abline(h=mean(trait[,i]),color="blue")
+                abline(h=mean(trait[,i]),col="blue")
+                text(1.38,mean(trait[,i])+1, "avg", col= "blue")
                 }
 }
+
