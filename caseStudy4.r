@@ -4,7 +4,7 @@ library('dplyr')
 library('reshape2')
 
 getwd()
-df<-read.csv("./Final.txt",sep=",",row.names = NULL,na.strings="")
+df<-read.csv("./teachStats/Final.txt",sep=",",row.names = NULL,na.strings="")
 df<-data.frame(na.omit(df,row.names=NULL))
 df$name<-factor(df$name)
 #df$quarter<-factor(df$quarter)
@@ -55,14 +55,13 @@ df
 df$term<-month(df$term,label = T)
 df$year<-dmy(df$year)
 df$year<-year(df$year)
-
 df$Start_date<-mdy(paste0(df$term,"/1/",df$year))
 
+qt<-df%>%select( Start_date,gender,version,prenup)%>%group_by(Start_date,version,gender,prenup)%>%summarise(count =n())
 
 
-
-ts<-ggplot(data=df,aes(x=Start_date,y=prenup))
-ts + geom_point()
+ts<-ggplot(data=qt,aes(x=Start_date,y=count,color=prenup))
+ts+ geom_point()+facet_grid(~version+gender)
 
 
 
