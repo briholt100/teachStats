@@ -1,9 +1,13 @@
 library('ggplot2')
+library('lubridate')
+library('dplyr')
+library('reshape2')
+
 getwd()
 df<-read.csv("./Final.txt",sep=",",row.names = NULL,na.strings="")
 df<-data.frame(na.omit(df,row.names=NULL))
 df$name<-factor(df$name)
-df$quarter<-factor(df$quarter)
+#df$quarter<-factor(df$quarter)
 df$prenup<-factor(df$prenup)
 
 plot (x=df$version, y = as.factor(df$prenup)
@@ -16,9 +20,9 @@ str(df)
 
 summary(df)
 
-gender<-table(df$prenup)
-prenupGender<-table(df$prenup,df$gender)
-genPrenupVer<-table(df$prenup,df$gender,df$version)
+genderdf<-table(df$prenup)
+prenupGenderdf<-table(df$prenup,df$gender)
+genPrenupVerdf<-table(df$prenup,df$gender,df$version)
 
 
 t.test(as.numeric(as.factor(df$prenup))~df$version)
@@ -28,6 +32,37 @@ plot1+coord_cartesian()+geom_bar()+facet_wrap(~version,ncol=2)+labs(title='count
 
 plot2<-ggplot(data=df, aes(x=prenup,fill=gender))
 plot2+stat_bin()+facet_wrap(~gender+version,ncol=4)+labs(title='count of male and female',x="Sign Prenup?",y = "Count")+guides(fill=FALSE)
+
+
+#the following pulls the 3rd number from code in quarter to create month of start
+for (i in 1:nrow(df)) {
+  if (substr(df$quarter[i],3,3) == '1') {df$term[i]<-6}
+  else if (substr(df$quarter[i],3,3) == '2') {df$term[i]<-9}
+  else if (substr(df$quarter[i],3,3) == '3') {df$term[i]<-1}
+  else if (substr(df$quarter[i],3,3) == '4') {df$term[i]<-4}
+}
+df$term<-as.integer(df$term)
+##Below, this tests the course's actualy year, eg, 673 means 3rd term (winter) of 2006-7 year, which is actually in 2007.
+for (i in 1:nrow(df)) {
+  if (substr(df$quarter[i],1,1) == '5') {df$year[i]<-"1/1/2015"}
+  else if(substr(df$quarter[i],3,3) <3) {df$year[i]<-paste0("1/1/200",substr(df$quarter[i],1,1))}
+  else if(substr(df$quarter[i],3,3) > 2) {df$year[i]<-paste0("1/1/200",substr(df$quarter[i],2,2))}
+}
+
+df
+###lubridate
+#change term to month, year to year
+df$term<-month(df$term,label = T)
+df$year<-dmy(df$year)
+df$year<-year(df$year)
+
+df$Start_date<-mdy(paste0(df$term,"/1/",df$year))
+
+
+
+
+ts<-ggplot(data=df,aes(x=Start_date,y=prenup))
+ts + geom_point()
 
 
 
