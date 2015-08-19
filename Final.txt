@@ -1,4 +1,4 @@
-name,quarter,gender,Version,prenp
+name,quarter,gender,version,prenup
 teri bikowsky,561,Female,A,No
 Sarah Bolla,561,Female,A,No
 Kira Brodie,561,Female,A,No

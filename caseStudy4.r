@@ -1,6 +1,6 @@
 library('ggplot2')
 getwd()
-df<-read.csv("./Final.txt",sep=",",na.strings="")
+df<-read.csv("./Final.txt",sep=",",row.names = NULL,na.strings="")
 df<-data.frame(na.omit(df,row.names=NULL))
 df$name<-factor(df$name)
 df$quarter<-factor(df$quarter)
@@ -24,9 +24,9 @@ genPrenupVer<-table(df$prenup,df$gender,df$version)
 t.test(as.numeric(as.factor(df$prenup))~df$version)
 
 plot1<-ggplot(data=df, aes(x=gender,fill=..x..>1))
-plot1+coord_cartesian(ylim = c(0.9, 12))+geom_bar()+facet_wrap(~version,ncol=2)+labs(title='count of male and female',x="Gender",y = "Count")
+plot1+coord_cartesian()+geom_bar()+facet_wrap(~version,ncol=2)+labs(title='count of male and female',x="Gender",y = "Count")+guides(fill=FALSE)
 
-plot2<-ggplot(data=df, aes(x=prenup,fill=c(1)))
+plot2<-ggplot(data=df, aes(x=prenup,fill=gender))
 plot2+stat_bin()+facet_wrap(~gender+version,ncol=4)+labs(title='count of male and female',x="Sign Prenup?",y = "Count")+guides(fill=FALSE)
 
 
@@ -34,11 +34,8 @@ plot2+stat_bin()+facet_wrap(~gender+version,ncol=4)+labs(title='count of male an
 ##########3
 #Below is for just the recent group.
 
-summerdf<-read.csv("./Final.txt",sep=",",row.names=NULL,na.strings="")
-summerdf<-data.frame(na.omit(summerdf,row.names=NULL))
-summerdf$name<-factor(summerdf$name)
-summerdf$quarter<-factor(summerdf$quarter)
-summerdf$prenup<-as.character(summerdf$prenup)
+summerdf<-df[df$quarter == 561,]
+
 
 plot (x=summerdf$version, y = as.factor(summerdf$prenup), main = "proportion of responses\n y = yes to prenup, \nn = no",xlab ="A = Male asks for prenup,\nB = Female asks for prenup")
 
