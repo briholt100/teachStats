@@ -4,7 +4,7 @@ library('dplyr')
 library('reshape2')
 
 getwd()
-df<-read.csv("./teachStats/Final.txt",sep=",",row.names = NULL,na.strings="")
+df<-read.csv("./Projects/teachStats/Final.txt",sep=",",row.names = NULL,na.strings="")
 df<-data.frame(na.omit(df,row.names=NULL))
 df$name<-factor(df$name)
 #df$quarter<-factor(df$quarter)
@@ -57,13 +57,17 @@ df$year<-dmy(df$year)
 df$year<-year(df$year)
 df$Start_date<-mdy(paste0(df$term,"/1/",df$year))
 
-qt<-df%>%select( Start_date,gender,version,prenup)%>%group_by(Start_date,version,gender,prenup)%>%summarise(count =n())
-
+qt<-df%>%select( quarter,gender,version,prenup)%>%group_by(quarter,version,gender,prenup)%>%summarise(count =n())
 
 ts<-ggplot(data=qt,aes(x=Start_date,y=count,color=prenup))
 ts+ geom_point()+facet_grid(~version+gender)
 
 
+qtDiff<-df%>%select( quarter,gender,version,prenup)%>%group_by(quarter,version,gender,prenup)%>%summarise(count=sum(prenup))
+
+temp<-df%>%select(quarter,gender,version,prenup)%>%mutate(yesCount = n())%>%filter(prenup == "Yes")%>%group_by(quarter,version,gender)%>%summarize(count=n())
+
+print(tbl_df(temp),n=44)
 
 ##########3
 #Below is for just the recent group.
