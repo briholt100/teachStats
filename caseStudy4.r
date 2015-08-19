@@ -4,7 +4,7 @@ library('dplyr')
 library('reshape2')
 
 getwd()
-df<-read.csv("./teachStats/Final.txt",sep=",",row.names = NULL,na.strings="")
+df<-read.csv("./teachstats/Final.txt",sep=",",row.names = NULL,na.strings="")
 df<-data.frame(na.omit(df,row.names=NULL))
 df$name<-factor(df$name)
 #df$quarter<-factor(df$quarter)
