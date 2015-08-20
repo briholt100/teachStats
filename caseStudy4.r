@@ -22,7 +22,7 @@ summary(df)
 
 genderdf<-table(df$prenup)
 prenupGenderdf<-table(df$prenup,df$gender)
-genPrenupVerdf<-table(df$prenup,df$gender,df$version)
+genPrenupVerdf<-table(df$gender,df$prenup,df$version,df$quarter)
 
 
 t.test(as.numeric(as.factor(df$prenup))~df$version)
@@ -63,9 +63,20 @@ ts<-ggplot(data=qt,aes(x=Start_date,y=count,color=prenup))
 ts+ geom_point()+facet_grid(~version+gender)
 
 
-qtDiff<-df%>%select( quarter,gender,version,prenup)%>%group_by(quarter,version,gender,prenup)%>%summarise(count=sum(prenup))
+qtDiff<-df%>%select(quarter,gender,version,prenup)%>%group_by(quarter,version,gender,prenup)%>%summarise(count=sum(prenup))
 
-temp<-df%>%select(quarter,gender,version,prenup)%>%mutate(yesCount = n())%>%filter(prenup == "Yes")%>%group_by(quarter,version,gender)%>%summarize(count=n())
+qtrCount<-df%>%select(quarter)%>%group_by(quarter)%>%summarise(count = n())
+
+temp<-df%>%select(quarter,gender,version,prenup)%>%group_by(quarter,version,gender,prenup)%>%summarise(count=n(), total = sum(prenup), prop = count/total)
+temp
+
+
+
+df%>%select(quarter,gender,version,prenup)%>%group_by(quarter,version,gender,prenup)%>%summarise(count=n(), total = sum(prenup), prop = count/total)
+
+
+
+
 
 print(tbl_df(temp),n=44)
 
