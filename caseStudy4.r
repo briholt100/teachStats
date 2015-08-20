@@ -72,12 +72,12 @@ temp
 
 
 
-df%>%select(quarter,gender,version,prenup)%>%group_by(quarter,version,gender,prenup)%>%summarise(count=n(), total = sum(prenup), prop = count/total)
+df%>%filter(gender =="Female"&prenup == "No")%>%select(quarter,gender,version,prenup)%>%group_by(quarter,version,gender,prenup)%>%summarise(count = n())
 
 
 
 
-
+  
 print(tbl_df(temp),n=44)
 
 ##########3
