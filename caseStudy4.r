@@ -57,7 +57,7 @@ df$year<-dmy(df$year)
 df$year<-year(df$year)
 df$Start_date<-mdy(paste0(df$term,"/1/",df$year))
 
-qt<-df%>%select( quarter,gender,version,prenup)%>%group_by(quarter,version,gender,prenup)%>%summarise(count =n())
+qt<-df%>%select( Start_date,gender,version,prenup)%>%group_by(Start_date,version,gender,prenup)%>%summarise(count =n())
 
 ts<-ggplot(data=qt,aes(x=Start_date,y=count,color=prenup))
 ts+ geom_point()+facet_grid(~version+gender)
@@ -67,17 +67,12 @@ qtDiff<-df%>%select(quarter,gender,version,prenup)%>%group_by(quarter,version,ge
 
 qtrCount<-df%>%select(quarter)%>%group_by(quarter)%>%summarise(count = n())
 
-temp<-df%>%select(quarter,gender,version,prenup)%>%group_by(quarter,version,gender,prenup)%>%summarise(count=n(), total = sum(prenup), prop = count/total)
-temp
+finaldf<-dcast(df,Start_date+version+gender~prenup)
+finaldf<-mutate(finaldf,Diff=Yes-No)
 
+finalPlot<-ggplot(data=finaldf,aes(x=Start_date,y=Diff,color=gender))
+finalPlot+ geom_line()+ facet_wrap(~version,ncol=2)+geom_abline(intercept = 1, slope = 1,color ="blue" )
 
-
-df%>%filter(gender =="Female"&prenup == "No")%>%select(quarter,gender,version,prenup)%>%group_by(quarter,version,gender,prenup)%>%summarise(count = n())
-
-
-
-
-  
 print(tbl_df(temp),n=44)
 
 ##########3
