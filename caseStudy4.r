@@ -22,7 +22,7 @@ summary(df)
 
 genderdf<-table(df$prenup)
 prenupGenderdf<-table(df$prenup,df$gender)
-genPrenupVerdf<-table(df$prenup,df$gender,df$version)
+genPrenupVerdf<-table(df$gender,df$prenup,df$version,df$quarter)
 
 
 t.test(as.numeric(as.factor(df$prenup))~df$version)
@@ -57,13 +57,28 @@ df$year<-dmy(df$year)
 df$year<-year(df$year)
 df$Start_date<-mdy(paste0(df$term,"/1/",df$year))
 
-qt<-df%>%select( Start_date,gender,version,prenup)%>%group_by(Start_date,version,gender,prenup)%>%summarise(count =n())
-
+qt<-df%>%select( quarter,gender,version,prenup)%>%group_by(quarter,version,gender,prenup)%>%summarise(count =n())
 
 ts<-ggplot(data=qt,aes(x=Start_date,y=count,color=prenup))
 ts+ geom_point()+facet_grid(~version+gender)
 
 
+qtDiff<-df%>%select(quarter,gender,version,prenup)%>%group_by(quarter,version,gender,prenup)%>%summarise(count=sum(prenup))
+
+qtrCount<-df%>%select(quarter)%>%group_by(quarter)%>%summarise(count = n())
+
+temp<-df%>%select(quarter,gender,version,prenup)%>%group_by(quarter,version,gender,prenup)%>%summarise(count=n(), total = sum(prenup), prop = count/total)
+temp
+
+
+
+df%>%filter(gender =="Female"&prenup == "No")%>%select(quarter,gender,version,prenup)%>%group_by(quarter,version,gender,prenup)%>%summarise(count = n())
+
+
+
+
+  
+print(tbl_df(temp),n=44)
 
 ##########3
 #Below is for just the recent group.
