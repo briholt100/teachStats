@@ -21,9 +21,10 @@ str(df)
 summary(df)
 
 genderdf<-table(df$prenup)
-prenupGenderdf<-table(df$prenup,df$gender)
-genPrenupVerdf<-table(df$gender,df$prenup,df$version,df$quarter)
-
+prenupVersiondf<-table(df$version,df$prenup)
+genPrenupVerdf<-table(df$version,df$prenup,df$gender)
+chisq.test(prenupVersion)
+chisq.test(table(df$gender,df$prenup))
 
 t.test(as.numeric(as.factor(df$prenup))~df$version)
 
@@ -59,19 +60,19 @@ df$Start_date<-mdy(paste0(df$term,"/1/",df$year))
 
 qt<-df%>%select( Start_date,gender,version,prenup)%>%group_by(Start_date,version,gender,prenup)%>%summarise(count =n())
 
-ts<-ggplot(data=qt,aes(x=Start_date,y=count,color=prenup))
-ts+ geom_point()+facet_grid(~version+gender)
+ts<-ggplot(data=qt,aes(x=Start_date,y=count,color=gender))
+#ts+ geom_line()+facet_grid(~version+prenup)+geom_smooth()
 
 
-qtDiff<-df%>%select(quarter,gender,version,prenup)%>%group_by(quarter,version,gender,prenup)%>%summarise(count=sum(prenup))
+qtDiff<-df%>%select(Start_date,gender,version,prenup)%>%group_by(Start_date,version,gender,prenup)%>%summarise(count=sum(prenup))
 
-qtrCount<-df%>%select(quarter)%>%group_by(quarter)%>%summarise(count = n())
+qtrCount<-df%>%select(Start_date)%>%group_by(Start_date)%>%summarise(count = n())
 
 finaldf<-dcast(df,Start_date+version+gender~prenup)
 finaldf<-mutate(finaldf,Diff=Yes-No)
 
 finalPlot<-ggplot(data=finaldf,aes(x=Start_date,y=Diff,color=gender))
-finalPlot+ geom_line()+ facet_wrap(~version,ncol=2)+geom_abline(intercept = 1, slope = 1,color ="blue" )
+finalPlot+ geom_point()+ facet_wrap(~version+gender,nrow=1)+geom_smooth()
 
 print(tbl_df(temp),n=44)
 
@@ -90,8 +91,8 @@ str(summerdf)
 summary(summerdf)
 
 gender<-table(summerdf$prenup)
-prenupGender<-table(summerdf$prenup,summerdf$gender)
-genPrenupVer<-table(summerdf$prenup,summerdf$gender,summerdf$version)
+prenupGender<-table(summerdf$version,summerdf$prenup)
+genPrenupVer<-table(summerdf$version,summerdf$prenup,summerdf$gender)
 
 
 t.test(as.numeric(as.factor(summerdf$prenup))~summerdf$version)
