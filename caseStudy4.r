@@ -3,6 +3,10 @@ library('lubridate')
 library('dplyr')
 library('reshape2')
 
+#campus
+#df<-read.csv("I:\\My Data Sources\\classroom stuff\\Final.txt",sep=",",row.names = NULL,na.strings="")
+
+
 getwd()
 df<-read.csv("./teachstats/Final.txt",sep=",",row.names = NULL,na.strings="")
 df<-data.frame(na.omit(df,row.names=NULL))
@@ -10,29 +14,27 @@ df$name<-factor(df$name)
 #df$quarter<-factor(df$quarter)
 df$prenup<-factor(df$prenup)
 
+plot (x=as.factor(df$prenup), main = "count  of responses\n y = yes to prenup, \nn = no")
+
 plot (x=df$version, y = as.factor(df$prenup)
       , main = "proportion of responses\n y = yes to prenup, \nn = no"
       ,xlab ="A = Male asks for prenup,\nB = Female asks for prenup")
-
-plot (x=as.factor(df$prenup), main = "count  of responses\n y = yes to prenup, \nn = no")
 
 str(df)
 
 summary(df)
 
-genderdf<-table(df$prenup)
 prenupVersiondf<-table(df$version,df$prenup)
 genPrenupVerdf<-table(df$version,df$prenup,df$gender)
-chisq.test(prenupVersion)
+chisq.test(prenupVersiondf)
 chisq.test(table(df$gender,df$prenup))
-
 t.test(as.numeric(as.factor(df$prenup))~df$version)
 
 plot1<-ggplot(data=df, aes(x=gender,fill=..x..>1))
 plot1+coord_cartesian()+geom_bar()+facet_wrap(~version,ncol=2)+labs(title='count of male and female',x="Gender",y = "Count")+guides(fill=FALSE)
 
 plot2<-ggplot(data=df, aes(x=prenup,fill=gender))
-plot2+stat_bin()+facet_wrap(~gender+version,ncol=4)+labs(title='count of male and female',x="Sign Prenup?",y = "Count")+guides(fill=FALSE)
+plot2+stat_count()+facet_wrap(~gender+version,ncol=4)+labs(title='count of male and female',x="Sign Prenup?",y = "Count")+guides(fill=FALSE)
 
 
 #the following pulls the 3rd number from code in quarter to create month of start
@@ -101,4 +103,4 @@ plot1<-ggplot(data=summerdf, aes(x=gender,fill=..x..>1))
 plot1+coord_cartesian(ylim = c(0.9, 12))+geom_bar()+facet_wrap(~version,ncol=2)+labs(title='count of male and female',x="Gender",y = "Count")
 
 plot2<-ggplot(data=summerdf, aes(x=prenup,fill=c(1)))
-plot2+stat_bin()+facet_wrap(~gender+version,ncol=4)+labs(title='count of male and female',x="Sign Prenup?",y = "Count")+guides(fill=FALSE)
+plot2+stat_count()+facet_wrap(~gender+version,ncol=4)+labs(title='count of male and female',x="Sign Prenup?",y = "Count")+guides(fill=FALSE)
