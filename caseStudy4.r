@@ -12,7 +12,7 @@ df<-read.csv("./teachstats/Final.txt",sep=",",row.names = NULL,na.strings="")
 df<-data.frame(na.omit(df,row.names=NULL))
 df$name<-factor(df$name)
 #df$quarter<-factor(df$quarter)
-df$prenup<-factor(df$prenup)
+df$prenup<-factor(as.character(df$prenup))
 
 plot (x=as.factor(df$prenup), main = "count  of responses\n y = yes to prenup, \nn = no")
 
