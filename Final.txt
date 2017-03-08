@@ -1,4 +1,4 @@
-name,quarter,gender,Version,prenp
+name,quarter,gender,Version,prenup
 aleshya,1673,Female,A,
 dana griffin,1673,Female,A,No
 dianne,1673,Female,A,No
