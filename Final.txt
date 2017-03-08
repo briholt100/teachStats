@@ -1,53 +1,104 @@
-name,quarter,gender,version,prenup
-teri bikowsky,561,Female,A,No
-Sarah Bolla,561,Female,A,No
-Kira Brodie,561,Female,A,No
-Zarajane Macapobre,561,Female,A,Yes
-Felicia Mancera Rayne,561,Female,A,No
-Amy Nance,561,Female,A,Yes
-Anna Nichols,561,Female,A,
-Terri Swensen,561,Female,A,No
-Kelsey Tengesdal,561,Female,A,Yes
-cheryl tran,561,Female,A,No
-Sabrina Tran,561,Female,A,
-Iris Vonberg,561,Female,A,No
-Erik Geving,561,Male,A,No
-Lee Hitchen,561,Male,A,No
-Kevin Rivard,561,Male,A,No
-Brett Zalkan,561,Male,A,No
-Jinyi Bishop,561,Female,B,Yes
-Kara Coughlin,561,Female,B,Yes
-Corey Dugan Barrett,561,Female,B,Yes
-Catherine Hannan,561,Female,B,Yes
-Patricia Mulate,561,Female,B,No
-Shiney Pacci-Alva,561,Female,B,
-Jarylin Reese,561,Female,B,Yes
-Jessica Schiers,561,Female,B,Yes
-Misty Sellgren,561,Female,B,Yes
-Julia Shure,561,Female,B,Yes
-anne st clair,561,Female,B,Yes
-Hadassa Torres,561,Female,B,No
-Brooke Usrey,561,Female,B,No
-'Jeffrey D''Angelo',561,Male,B,No
-Lukas Moedritzer,561,Male,B,No
-ANTHONY RODRIGUEZ,561,Male,B,Yes
-Brian Tarcea,561,Male,B,Yes
+name,quarter,gender,Version,prenp
+aleshya,1673,Female,A,
+dana griffin,1673,Female,A,No
+dianne,1673,Female,A,No
+jean greggor,1673,Male,A,No
+Juliana Broussard,1673,Female,A,Yes
+kira,1673,Female,A,Yes
+Lindsay Muratore,1673,Female,A,Yes
+mathew,1673,Male,A,Yes
+megan gosselin,1673,Female,A,
+nathan Ho,1673,Male,A,No
+Samantha Ungson,1673,Female,A,
+taijh clark,1673,Male,A,Yes
+thomas willms,1673,Male,A,No
+anna martin,1673,Female,B,Yes
+devaswa,1673,Female,B,Yes
+diedre,1673,Female,B,Yes
+erica job,1673,Female,B,Yes
+ian mckenzie,1673,Male,B,Yes
+lauren thompson,1673,Female,A,Yes
+lindsey brook,1673,Female,B,Yes
+Mariela Salcedo,1673,Female,B,No
+rose,1673,Female,B,No
+sara conklin,1673,Female,B,Yes
+sara martin,1673,Female,B,Yes
+tiffany,1673,Female,B,No
+ADEKANBI ABIOLA A,1564,Male,A,
+ALMGREN CHRISTOPHER J,1564,Male,B,
+ASHBURN JAMEE L,1564,Female,A,
+BEETON JOHN T,1564,Male,A,
+BERG JACOB A,1564,Male,B,
+COPELAND EMILY D,1564,Female,B,
+DEMELLA JENNIFER M,1564,Female,A,
+HAMERLY CHRISTOPHER M,1564,Male,A,
+IRAOLA MARIA-JOSEFA M,1564,Female,B,
+KALNASY EMMA R,1564,Female,A,
+LERVAAG KELSEY M,1564,Female,B,
+MARROQUIN PAULA,1564,Female,A,
+MILLER BRANDON F,1564,Male,B,
+MIX ARIANA K,1564,Female,B,
+OHKI SHIORI I,1564,Female,A,
+PENARANDA RICHARD R,1564,Male,A,
+RAIFORD HANNA Z,1564,Female,B,
+SALEEM FATIMAH A,1564,Female,A,
+SHEPPARD MELANIE C,1564,Female,B,
+SHRIVER CELIA J,1564,Female,A,
+SOLTOW REBECCA L,1564,Female,B,
+TELLIER HALLEE A,1564,Female,A,
+TESFAYE MAHALET H,1564,Female,B,
+THURMOND MIGNON X,1564,Female,A,
+TORRES SARAH E,1564,Female,B,
+TRASK ALICIA M,1564,Female,B,
+teri bikowsky,1561,Female,A,No
+Sarah Bolla,1561,Female,A,No
+Kira Brodie,1561,Female,A,No
+Zarajane Macapobre,1561,Female,A,Yes
+Felicia Mancera Rayne,1561,Female,A,No
+Amy Nance,1561,Female,A,Yes
+Anna Nichols,1561,Female,A,
+Terri Swensen,1561,Female,A,No
+Kelsey Tengesdal,1561,Female,A,Yes
+cheryl tran,1561,Female,A,No
+Sabrina Tran,1561,Female,A,
+Iris Vonberg,1561,Female,A,No
+Erik Geving,1561,Male,A,No
+Lee Hitchen,1561,Male,A,No
+Kevin Rivard,1561,Male,A,No
+Brett Zalkan,1561,Male,A,No
+Jinyi Bishop,1561,Female,B,Yes
+Kara Coughlin,1561,Female,B,Yes
+Corey Dugan Barrett,1561,Female,B,Yes
+Catherine Hannan,1561,Female,B,Yes
+Patricia Mulate,1561,Female,B,No
+Shiney Pacci-Alva,1561,Female,B,
+Jarylin Reese,1561,Female,B,Yes
+Jessica Schiers,1561,Female,B,Yes
+Misty Sellgren,1561,Female,B,Yes
+Julia Shure,1561,Female,B,Yes
+anne st clair,1561,Female,B,Yes
+Hadassa Torres,1561,Female,B,No
+Brooke Usrey,1561,Female,B,No
+Jeffrey D'Angelo,1561,Male,B,No
+Lukas Moedritzer,1561,Male,B,No
+ANTHONY RODRIGUEZ,1561,Male,B,Yes
+Brian Tarcea,1561,Male,B,Yes
 amy,673,Female,A,No
-diana ,673,Female,A,No
-jenna ,673,Female,A,Yes
-liesl ,673,Female,A,No
-merril ,673,Female,A,Yes
-julie ,673,Female,A,Yes
-shane ,673,Male,A,Yes
-daniel ,673,Male,A,No
-risa ,673,Male,A,Yes
-peter ,673,Male,A,Yes
-natasha ,673,Female,B,Yes
-carrie ,673,Female,B,No
-christy ,673,Female,B,No
-elaine ,673,Female,B,Yes
-tarek ,673,Male,B,No
-lamin ,673,Male,B,Yes
+diana,673,Female,A,No
+jenna,673,Female,A,Yes
+liesl,673,Female,A,No
+merril,673,Female,A,Yes
+julie,673,Female,A,Yes
+shane,673,Male,A,Yes
+daniel,673,Male,A,No
+risa,673,Male,A,Yes
+peter,673,Male,A,Yes
+natasha,673,Female,B,Yes
+carrie,673,Female,B,No
+christy,673,Female,B,No
+elaine,673,Female,B,Yes
+tarek,673,Male,B,No
+lamin,673,Male,B,Yes
 jim,673,Male,B,No
 BERGMAN DONNA C,674,Female,A,No
 CHONG-TIM AMANDA N,674,Female,A,No
@@ -67,43 +118,43 @@ YOSEPH BEREKTI T,674,Female,B,Yes
 FRANZEN ANNA L,674,Female,B,Yes
 BERJAC DANIEL X,674,Male,B,Yes
 COGLON ANDREW B,674,Male,B,No
-antonich ,781,Female,A,No
-bystrom ,781,Female,A,No
-chandler ,781,Female,A,No
-english ,781,Female,A,No
-franson-akagi ,781,Female,A,No
-gosnell ,781,Female,A,No
-gozali ,781,Female,A,Yes
-hilzinger ,781,Female,A,Yes
-klump ,781,Female,A,No
-ludeman ,781,Female,A,No
-luther ,781,Female,A,
-mcCue ,781,Female,A,
+antonich,781,Female,A,No
+bystrom,781,Female,A,No
+chandler,781,Female,A,No
+english,781,Female,A,No
+franson-akagi,781,Female,A,No
+gosnell,781,Female,A,No
+gozali,781,Female,A,Yes
+hilzinger,781,Female,A,Yes
+klump,781,Female,A,No
+ludeman,781,Female,A,No
+luther,781,Female,A,
+mcCue,781,Female,A,
 MILLER JANICE C,781,Female,A,
-reyes ,781,Female,A,Yes
-stephens ,781,Female,A,No
-zetlen ,781,Female,A,No
-breton ,781,Male,A,Yes
-daggett ,781,Male,A,No
-halim ,781,Male,A,No
-jangaard ,781,Male,A,No
-leliaert ,781,Male,A,Yes
-abualrub ,781,Female,B,No
-beckley ,781,Female,B,
-chambers ,781,Female,B,Yes
-demetrescu ,781,Female,B,No
-derrick ,781,Female,B,No
-duffield ,781,Female,B,Yes
-kaufman ,781,Female,B,No
-lee2 ,781,Female,B,Yes
-richardson ,781,Female,B,Yes
-roach ,781,Female,B,No
-ross ,781,Female,B,
-stephan ,781,Female,B,Yes
-wilson ,781,Female,B,No
-bourne ,781,Male,B,Yes
-reichert ,781,Male,B,Yes
-treser ,781,Male,B,No
+reyes,781,Female,A,Yes
+stephens,781,Female,A,No
+zetlen,781,Female,A,No
+breton,781,Male,A,Yes
+daggett,781,Male,A,No
+halim,781,Male,A,No
+jangaard,781,Male,A,No
+leliaert,781,Male,A,Yes
+abualrub,781,Female,B,No
+beckley,781,Female,B,
+chambers,781,Female,B,Yes
+demetrescu,781,Female,B,No
+derrick,781,Female,B,No
+duffield,781,Female,B,Yes
+kaufman,781,Female,B,No
+lee2,781,Female,B,Yes
+richardson,781,Female,B,Yes
+roach,781,Female,B,No
+ross,781,Female,B,
+stephan,781,Female,B,Yes
+wilson,781,Female,B,No
+bourne,781,Male,B,Yes
+reichert,781,Male,B,Yes
+treser,781,Male,B,No
 CLARK TRACEY L,782,Female,A,No
 DEPAZ ZOE I,782,Female,A,Yes
 ERIE GALE S,782,Female,A,No
@@ -223,21 +274,21 @@ NOHA TINA D,893,Female,B,Yes
 PHILAKHAM HOLLY,893,Female,B,No
 STREICH REBECCA A,893,Female,B,Yes
 HIRSCH NATE,893,Male,B,No
-Nicholson; Angela,901,Female,A,Yes
-Riggers; Lauren,901,Female,A,No
-Baglien; Paige ,901,Female,A,No
-Isbell; Joliet ,901,Female,A,No
-Kabiru; Annbritah ,901,Female,A,Yes
-Stern; Johanna,901,Female,A,No
-Laws; Stephanie,901,Female,A,Yes
-Oleson; Megan,901,Female,A,No
-Caron; Shannon,901,Female,A,Yes
-Altvater; Sarah ,901,Female,A,Yes
-reyes; cherie,901,Female,A,Yes
-Zeno; George ,901,Male,A,Yes
-Stutz; Jason,901,Male,A,No
-Wild; Jenna,901,Female,B,Yes
-Perkins; Maya,901,Female,B,Yes
-Norwood; Melissa,901,Female,B,Yes
-Hong; Eunjin ,901,Female,B,Yes
-Moffet; Ronald,901,Male,B,No
+"Nicholson, Angela",901,Female,A,Yes
+"Riggers, Lauren",901,Female,A,No
+"Baglien, Paige",901,Female,A,No
+"Isbell, Joliet",901,Female,A,No
+"Kabiru, Annbritah",901,Female,A,Yes
+"Stern, Johanna",901,Female,A,No
+"Laws, Stephanie",901,Female,A,Yes
+"Oleson, Megan",901,Female,A,No
+"Caron, Shannon",901,Female,A,Yes
+"Altvater, Sarah",901,Female,A,Yes
+"reyes, cherie",901,Female,A,Yes
+"Zeno, George",901,Male,A,Yes
+"Stutz, Jason",901,Male,A,No
+"Wild, Jenna",901,Female,B,Yes
+"Perkins, Maya",901,Female,B,Yes
+"Norwood, Melissa",901,Female,B,Yes
+"Hong, Eunjin",901,Female,B,Yes
+"Moffet, Ronald",901,Male,B,No
