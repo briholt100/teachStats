@@ -1,5 +1,5 @@
-name,quarter,gender,Version,prenup
-aleshya,1673,Female,A,,
+name,quarter,gender,version,prenup
+aleshya,1673,Female,A,NA,
 dana griffin,1673,Female,A,No
 dianne,1673,Female,A,No
 jean greggor,1673,Male,A,No
@@ -7,9 +7,9 @@ Juliana Broussard,1673,Female,A,Yes
 kira,1673,Female,A,Yes
 Lindsay Muratore,1673,Female,A,Yes
 mathew,1673,Male,A,Yes
-megan gosselin,1673,Female,A,,
+megan gosselin,1673,Female,A,NA,
 nathan Ho,1673,Male,A,No
-Samantha Ungson,1673,Female,A,,
+Samantha Ungson,1673,Female,A,NA,
 taijh clark,1673,Male,A,Yes
 thomas willms,1673,Male,A,No
 anna martin,1673,Female,B,Yes
@@ -24,43 +24,43 @@ rose,1673,Female,B,No
 sara conklin,1673,Female,B,Yes
 sara martin,1673,Female,B,Yes
 tiffany,1673,Female,B,No
-ADEKANBI ABIOLA A,1564,Male,A,,
-ALMGREN CHRISTOPHER J,1564,Male,B,,
-ASHBURN JAMEE L,1564,Female,A,,
-BEETON JOHN T,1564,Male,A,,
-BERG JACOB A,1564,Male,B,,
-COPELAND EMILY D,1564,Female,B,,
-DEMELLA JENNIFER M,1564,Female,A,,
-HAMERLY CHRISTOPHER M,1564,Male,A,,
-IRAOLA MARIA-JOSEFA M,1564,Female,B,,
-KALNASY EMMA R,1564,Female,A,,
-LERVAAG KELSEY M,1564,Female,B,,
-MARROQUIN PAULA,1564,Female,A,,
-MILLER BRANDON F,1564,Male,B,,
-MIX ARIANA K,1564,Female,B,,
-OHKI SHIORI I,1564,Female,A,,
-PENARANDA RICHARD R,1564,Male,A,,
-RAIFORD HANNA Z,1564,Female,B,,
-SALEEM FATIMAH A,1564,Female,A,,
-SHEPPARD MELANIE C,1564,Female,B,,
-SHRIVER CELIA J,1564,Female,A,,
-SOLTOW REBECCA L,1564,Female,B,,
-TELLIER HALLEE A,1564,Female,A,,
-TESFAYE MAHALET H,1564,Female,B,,
-THURMOND MIGNON X,1564,Female,A,,
-TORRES SARAH E,1564,Female,B,,
-TRASK ALICIA M,1564,Female,B,,
+ADEKANBI ABIOLA A,1564,Male,A,NA,
+ALMGREN CHRISTOPHER J,1564,Male,B,NA,
+ASHBURN JAMEE L,1564,Female,A,NA,
+BEETON JOHN T,1564,Male,A,NA,
+BERG JACOB A,1564,Male,B,NA,
+COPELAND EMILY D,1564,Female,B,NA,
+DEMELLA JENNIFER M,1564,Female,A,NA,
+HAMERLY CHRISTOPHER M,1564,Male,A,NA,
+IRAOLA MARIA-JOSEFA M,1564,Female,B,NA,
+KALNASY EMMA R,1564,Female,A,NA,
+LERVAAG KELSEY M,1564,Female,B,NA,
+MARROQUIN PAULA,1564,Female,A,NA,
+MILLER BRANDON F,1564,Male,B,NA,
+MIX ARIANA K,1564,Female,B,NA,
+OHKI SHIORI I,1564,Female,A,NA,
+PENARANDA RICHARD R,1564,Male,A,NA,
+RAIFORD HANNA Z,1564,Female,B,NA,
+SALEEM FATIMAH A,1564,Female,A,NA,
+SHEPPARD MELANIE C,1564,Female,B,NA,
+SHRIVER CELIA J,1564,Female,A,NA,
+SOLTOW REBECCA L,1564,Female,B,NA,
+TELLIER HALLEE A,1564,Female,A,NA,
+TESFAYE MAHALET H,1564,Female,B,NA,
+THURMOND MIGNON X,1564,Female,A,NA,
+TORRES SARAH E,1564,Female,B,NA,
+TRASK ALICIA M,1564,Female,B,NA,
 teri bikowsky,1561,Female,A,No
 Sarah Bolla,1561,Female,A,No
 Kira Brodie,1561,Female,A,No
 Zarajane Macapobre,1561,Female,A,Yes
 Felicia Mancera Rayne,1561,Female,A,No
 Amy Nance,1561,Female,A,Yes
-Anna Nichols,1561,Female,A,,
+Anna Nichols,1561,Female,A,NA,
 Terri Swensen,1561,Female,A,No
 Kelsey Tengesdal,1561,Female,A,Yes
 cheryl tran,1561,Female,A,No
-Sabrina Tran,1561,Female,A,,
+Sabrina Tran,1561,Female,A,NA,
 Iris Vonberg,1561,Female,A,No
 Erik Geving,1561,Male,A,No
 Lee Hitchen,1561,Male,A,No
@@ -71,7 +71,7 @@ Kara Coughlin,1561,Female,B,Yes
 Corey Dugan Barrett,1561,Female,B,Yes
 Catherine Hannan,1561,Female,B,Yes
 Patricia Mulate,1561,Female,B,No
-Shiney Pacci-Alva,1561,Female,B,,
+Shiney Pacci-Alva,1561,Female,B,NA,
 Jarylin Reese,1561,Female,B,Yes
 Jessica Schiers,1561,Female,B,Yes
 Misty Sellgren,1561,Female,B,Yes
@@ -128,9 +128,9 @@ gozali,781,Female,A,Yes
 hilzinger,781,Female,A,Yes
 klump,781,Female,A,No
 ludeman,781,Female,A,No
-luther,781,Female,A,,
-mcCue,781,Female,A,,
-MILLER JANICE C,781,Female,A,,
+luther,781,Female,A,NA,
+mcCue,781,Female,A,NA,
+MILLER JANICE C,781,Female,A,NA,
 reyes,781,Female,A,Yes
 stephens,781,Female,A,No
 zetlen,781,Female,A,No
@@ -140,7 +140,7 @@ halim,781,Male,A,No
 jangaard,781,Male,A,No
 leliaert,781,Male,A,Yes
 abualrub,781,Female,B,No
-beckley,781,Female,B,,
+beckley,781,Female,B,NA,
 chambers,781,Female,B,Yes
 demetrescu,781,Female,B,No
 derrick,781,Female,B,No
@@ -149,7 +149,7 @@ kaufman,781,Female,B,No
 lee2,781,Female,B,Yes
 richardson,781,Female,B,Yes
 roach,781,Female,B,No
-ross,781,Female,B,,
+ross,781,Female,B,NA,
 stephan,781,Female,B,Yes
 wilson,781,Female,B,No
 bourne,781,Male,B,Yes
@@ -163,7 +163,7 @@ JEWETT LAURA E,782,Female,A,No
 KANG HYEMIN,782,Female,A,Yes
 LINDSLEY KATHERINE E,782,Female,A,No
 STORCK CLAIRE C,782,Female,A,Yes
-OKITKUN RITA A,782,Female,A,,
+OKITKUN RITA A,782,Female,A,NA,
 BENNETT SEAN J,782,Male,A,Yes
 CHRISTMAN KEVIN W,782,Male,A,No
 ANSANH COURTNEY C,782,Female,B,Yes
@@ -175,8 +175,8 @@ HELLER RACHEL A,782,Female,B,Yes
 NERI MARY A,782,Female,B,Yes
 STERLING SARAH F,782,Female,B,No
 WELLS DOROTHY H,782,Female,B,No
-JORDAN ASHLI E,782,Female,B,,
-LAFFERTY NICOLE E,782,Female,B,,
+JORDAN ASHLI E,782,Female,B,NA,
+LAFFERTY NICOLE E,782,Female,B,NA,
 ROBINSON BRIAN M,782,Male,B,No
 FARRELL JENNIFER E,783,Female,A,No
 LOEWEN REBECCA M,783,Female,A,No
@@ -185,8 +185,8 @@ SOLOZHUK EVANGELINE C,783,Female,A,No
 DEPEW TIFFANIE M,783,Female,A,Yes
 JOHNSON CRYSTAL H,783,Female,A,Yes
 WILSON BLAIR W,783,Female,A,Yes
-ABDUL-ALIM ASIYA M,783,Female,A,,
-CLOWES SARAH E,783,Female,A,,
+ABDUL-ALIM ASIYA M,783,Female,A,NA,
+CLOWES SARAH E,783,Female,A,NA,
 ALIAGHAI NAVID J,783,Male,A,Yes
 GOODWIN SHARON P,783,Female,B,No
 LEONARD KATHERINE H,783,Female,B,No

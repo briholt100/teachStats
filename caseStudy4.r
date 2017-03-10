@@ -4,37 +4,113 @@ library('dplyr')
 library('reshape2')
 
 #campus
-#df<-read.csv("I:\\My Data Sources\\classroom stuff\\Final.txt",sep=",",row.names = NULL,na.strings="")
+#df<-read.csv("I:\\My Data Sources\\classroom stuff\\Final.txt",sep=",",row.names = NULL,na.strings="NA")
 
 
 getwd()
 df<-read.csv("./teachstats/Final.txt",sep=",",row.names = NULL,na.strings="")
-df<-data.frame(na.omit(df,row.names=NULL))
+df<-read.csv("I:\\My Data Sources\\classroom stuff\\Final.txt",sep=",",row.names = T,na.strings="")
+colnames(df)<-colnames(df)[2:6]
+df<-df[,1:5]
+#df<-data.frame(na.omit(df,row.names=NULL))
 df$name<-factor(df$name)
 #df$quarter<-factor(df$quarter)
 df$prenup<-factor(as.character(df$prenup))
 
-plot (x=as.factor(df$prenup), main = "count  of responses\n y = yes to prenup, \nn = no")
-
-plot (x=df$version, y = as.factor(df$prenup)
-      , main = "proportion of responses\n y = yes to prenup, \nn = no"
-      ,xlab ="A = Male asks for prenup,\nB = Female asks for prenup")
-
 str(df)
-
 summary(df)
 
+
+df<-df[complete.cases(df),]  #this remmoves students who didn't clearly indicate what to do
+
+genderdf<-table(df$gender)
+
+prenupdf<-table(df$prenup)
+chisq.test(prenupdf)
+as.data.frame(prenupdf) %>% 
+  rename(prenup=Var1) %>% 
+  ggplot(aes(x=prenup,y=Freq,group=1,label=Freq))+
+  geom_point()+
+  geom_line()+
+  labs(title="Should a Prenup be signed?")+
+  scale_y_continuous(limits = c(110, 135))+
+  geom_text(aes(y = Freq + 2))
+
+
 prenupVersiondf<-table(df$version,df$prenup)
-genPrenupVerdf<-table(df$version,df$prenup,df$gender)
 chisq.test(prenupVersiondf)
-chisq.test(table(df$gender,df$prenup))
-t.test(as.numeric(as.factor(df$prenup))~df$version)
+
+as.data.frame(prenupVersiondf) %>% 
+  rename(version=Var1,prenup=Var2) %>% 
+  ggplot(aes(x=version,y=Freq,group=prenup,color=prenup,label=Freq)) +
+  geom_point()+
+  geom_line()+
+  labs(title="Should a Prenup be signed, by version") +
+  scale_y_continuous(limits = c(45, 80))+
+  geom_text(aes(y = Freq + 2))
+
+as.data.frame(prenupVersiondf) %>% 
+  rename(version=Var1,prenup=Var2) %>% 
+  ggplot(aes(x=prenup,y=Freq,label=Freq,group=version))+geom_line() +
+  geom_point()+facet_wrap(~version)+
+  scale_y_continuous(limits = c(45, 80))+
+  geom_text(aes(y = Freq + 2))
+
+
+genPrenupVerdf<-table(df$version,df$prenup,df$gender)
+genderData<-as.data.frame(genPrenupVerdf) %>% 
+  rename(version=Var1,prenup=Var2,gender=Var3)
+
+genderData.lm<-lm(Freq ~ version + prenup + gender,data=genderData)
+summary(genderData.lm)
+anova(genderData.lm)
+confint(genderData.lm)
+
+genderData.lm1 <- data.frame(Fitted = fitted(genderData.lm),
+                       Residuals = resid(genderData.lm), gender = genderData$gender)
+
+  
+  ggplot(genderData.lm1, aes(Fitted, Residuals, colour = gender)) + geom_point()
+
+  #https://www.r-bloggers.com/one-way-analysis-of-variance-anova/
+
+as.data.frame(genPrenupVerdf) %>% 
+  rename(version=Var1,prenup=Var2,gender=Var3) %>% 
+  ggplot(aes(x=version,y=Freq,group=prenup,color=prenup,label=Freq)) +
+  geom_point()+
+  geom_line()+
+  labs(title="Should a Prenup be signed, by version and gender") +
+  scale_y_continuous(limits = c(0, 75))+
+  geom_text(aes(y = Freq + 3))+
+  facet_wrap(~gender)
+
+
+
+#recent class#
+RecentClassdf<-df %>% filter(quarter == '1673')
+RecentGenPrenupVerdf<-table(RecentClassdf$version,RecentClassdf$prenup,RecentClassdf$gender)
+as.data.frame(RecentGenPrenupVerdf) %>% 
+  rename(version=Var1,prenup=Var2,gender=Var3) %>% 
+  ggplot(aes(x=version,y=Freq,group=prenup,color=prenup,label=Freq)) +
+  geom_point()+
+  geom_line()+
+  labs(title="Should a Prenup be signed, by version and gender") +
+  scale_y_continuous(limits = c(0, 8))+
+  geom_text(aes(y = Freq + .5))+
+  facet_wrap(~gender)
+
+
+
 
 plot1<-ggplot(data=df, aes(x=gender,fill=..x..>1))
-plot1+coord_cartesian()+geom_bar()+facet_wrap(~version,ncol=2)+labs(title='count of male and female',x="Gender",y = "Count")+guides(fill=FALSE)
+plot1+coord_cartesian()+geom_bar()+facet_wrap(~version,ncol=2)+labs(title='count of male and female\n\nA=Male asks for Prenup\nB=Female asks for Prenup',x="Gender",y = "Count")+guides(fill=FALSE)
 
 plot2<-ggplot(data=df, aes(x=prenup,fill=gender))
-plot2+stat_count()+facet_wrap(~gender+version,ncol=4)+labs(title='count of male and female',x="Sign Prenup?",y = "Count")+guides(fill=FALSE)
+plot2+ geom_bar(stat="bin")+facet_wrap(~gender+version,ncol=4)+labs(title='count of male and female',x="Sign Prenup?",y = "Count")+guides(fill=FALSE)
+
+
+
+
 
 
 #the following pulls the 3rd number from code in quarter to create month of start
