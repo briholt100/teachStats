@@ -10,7 +10,7 @@ mathew,1673,Male,A,Yes
 megan gosselin,1673,Female,A,NA,
 nathan Ho,1673,Male,A,No
 Samantha Ungson,1673,Female,A,NA,
-taijh clark,1673,Male,A,Yes
+taijh clark,1673,Female,A,Yes
 thomas willms,1673,Male,A,No
 anna martin,1673,Female,B,Yes
 devaswa,1673,Female,B,Yes
