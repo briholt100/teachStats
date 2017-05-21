@@ -1,294 +1,295 @@
-name,quarter,gender,version,prenup
-aleshya,1673,Female,A,NA,
-dana griffin,1673,Female,A,No
-dianne,1673,Female,A,No
-jean greggor,1673,Male,A,No
-Juliana Broussard,1673,Female,A,Yes
-kira,1673,Female,A,Yes
-Lindsay Muratore,1673,Female,A,Yes
-mathew,1673,Male,A,Yes
-megan gosselin,1673,Female,A,NA,
-nathan Ho,1673,Male,A,No
-Samantha Ungson,1673,Female,A,NA,
-taijh clark,1673,Male,A,Yes
-thomas willms,1673,Male,A,No
-anna martin,1673,Female,B,Yes
-devaswa,1673,Female,B,Yes
-diedre,1673,Female,B,Yes
-erica job,1673,Female,B,Yes
-ian mckenzie,1673,Male,B,Yes
-lauren thompson,1673,Female,A,Yes
-lindsey brook,1673,Female,B,Yes
-Mariela Salcedo,1673,Female,B,No
-rose,1673,Female,B,No
-sara conklin,1673,Female,B,Yes
-sara martin,1673,Female,B,Yes
-tiffany,1673,Female,B,No
-ADEKANBI ABIOLA A,1564,Male,A,NA,
-ALMGREN CHRISTOPHER J,1564,Male,B,NA,
-ASHBURN JAMEE L,1564,Female,A,NA,
-BEETON JOHN T,1564,Male,A,NA,
-BERG JACOB A,1564,Male,B,NA,
-COPELAND EMILY D,1564,Female,B,NA,
-DEMELLA JENNIFER M,1564,Female,A,NA,
-HAMERLY CHRISTOPHER M,1564,Male,A,NA,
-IRAOLA MARIA-JOSEFA M,1564,Female,B,NA,
-KALNASY EMMA R,1564,Female,A,NA,
-LERVAAG KELSEY M,1564,Female,B,NA,
-MARROQUIN PAULA,1564,Female,A,NA,
-MILLER BRANDON F,1564,Male,B,NA,
-MIX ARIANA K,1564,Female,B,NA,
-OHKI SHIORI I,1564,Female,A,NA,
-PENARANDA RICHARD R,1564,Male,A,NA,
-RAIFORD HANNA Z,1564,Female,B,NA,
-SALEEM FATIMAH A,1564,Female,A,NA,
-SHEPPARD MELANIE C,1564,Female,B,NA,
-SHRIVER CELIA J,1564,Female,A,NA,
-SOLTOW REBECCA L,1564,Female,B,NA,
-TELLIER HALLEE A,1564,Female,A,NA,
-TESFAYE MAHALET H,1564,Female,B,NA,
-THURMOND MIGNON X,1564,Female,A,NA,
-TORRES SARAH E,1564,Female,B,NA,
-TRASK ALICIA M,1564,Female,B,NA,
-teri bikowsky,1561,Female,A,No
-Sarah Bolla,1561,Female,A,No
-Kira Brodie,1561,Female,A,No
-Zarajane Macapobre,1561,Female,A,Yes
-Felicia Mancera Rayne,1561,Female,A,No
-Amy Nance,1561,Female,A,Yes
-Anna Nichols,1561,Female,A,NA,
-Terri Swensen,1561,Female,A,No
-Kelsey Tengesdal,1561,Female,A,Yes
-cheryl tran,1561,Female,A,No
-Sabrina Tran,1561,Female,A,NA,
-Iris Vonberg,1561,Female,A,No
-Erik Geving,1561,Male,A,No
-Lee Hitchen,1561,Male,A,No
-Kevin Rivard,1561,Male,A,No
-Brett Zalkan,1561,Male,A,No
-Jinyi Bishop,1561,Female,B,Yes
-Kara Coughlin,1561,Female,B,Yes
-Corey Dugan Barrett,1561,Female,B,Yes
-Catherine Hannan,1561,Female,B,Yes
-Patricia Mulate,1561,Female,B,No
-Shiney Pacci-Alva,1561,Female,B,NA,
-Jarylin Reese,1561,Female,B,Yes
-Jessica Schiers,1561,Female,B,Yes
-Misty Sellgren,1561,Female,B,Yes
-Julia Shure,1561,Female,B,Yes
-anne st clair,1561,Female,B,Yes
-Hadassa Torres,1561,Female,B,No
-Brooke Usrey,1561,Female,B,No
-Jeffrey D'Angelo,1561,Male,B,No
-Lukas Moedritzer,1561,Male,B,No
-ANTHONY RODRIGUEZ,1561,Male,B,Yes
-Brian Tarcea,1561,Male,B,Yes
-amy,673,Female,A,No
-diana,673,Female,A,No
-jenna,673,Female,A,Yes
-liesl,673,Female,A,No
-merril,673,Female,A,Yes
-julie,673,Female,A,Yes
-shane,673,Male,A,Yes
-daniel,673,Male,A,No
-risa,673,Male,A,Yes
-peter,673,Male,A,Yes
-natasha,673,Female,B,Yes
-carrie,673,Female,B,No
-christy,673,Female,B,No
-elaine,673,Female,B,Yes
-tarek,673,Male,B,No
-lamin,673,Male,B,Yes
-jim,673,Male,B,No
-BERGMAN DONNA C,674,Female,A,No
-CHONG-TIM AMANDA N,674,Female,A,No
-JOHNSON SARAH C,674,Female,A,No
-OTOOLE LAUREN K,674,Female,A,No
-WALTER CHELSEA,674,Female,A,Yes
-MANAHAN DIANE E,674,Female,A,No
-MOON AUSTIN,674,Male,A,No
-WHARTON MATTHEW R,674,Male,A,Yes
-KANESHIRO TIFFANY S,674,Female,B,Yes
-LEIGHTON TINA M,674,Female,B,Yes
-MACMILLAN DAYNA L,674,Female,B,Yes
-MCGRATH KATHRYN A,674,Female,B,Yes
-MUNSON ALISON J,674,Female,B,Yes
-RAMOS RAVYN B,674,Female,B,Yes
-YOSEPH BEREKTI T,674,Female,B,Yes
-FRANZEN ANNA L,674,Female,B,Yes
-BERJAC DANIEL X,674,Male,B,Yes
-COGLON ANDREW B,674,Male,B,No
-antonich,781,Female,A,No
-bystrom,781,Female,A,No
-chandler,781,Female,A,No
-english,781,Female,A,No
-franson-akagi,781,Female,A,No
-gosnell,781,Female,A,No
-gozali,781,Female,A,Yes
-hilzinger,781,Female,A,Yes
-klump,781,Female,A,No
-ludeman,781,Female,A,No
-luther,781,Female,A,NA,
-mcCue,781,Female,A,NA,
-MILLER JANICE C,781,Female,A,NA,
-reyes,781,Female,A,Yes
-stephens,781,Female,A,No
-zetlen,781,Female,A,No
-breton,781,Male,A,Yes
-daggett,781,Male,A,No
-halim,781,Male,A,No
-jangaard,781,Male,A,No
-leliaert,781,Male,A,Yes
-abualrub,781,Female,B,No
-beckley,781,Female,B,NA,
-chambers,781,Female,B,Yes
-demetrescu,781,Female,B,No
-derrick,781,Female,B,No
-duffield,781,Female,B,Yes
-kaufman,781,Female,B,No
-lee2,781,Female,B,Yes
-richardson,781,Female,B,Yes
-roach,781,Female,B,No
-ross,781,Female,B,NA,
-stephan,781,Female,B,Yes
-wilson,781,Female,B,No
-bourne,781,Male,B,Yes
-reichert,781,Male,B,Yes
-treser,781,Male,B,No
-CLARK TRACEY L,782,Female,A,No
-DEPAZ ZOE I,782,Female,A,Yes
-ERIE GALE S,782,Female,A,No
-GODLEY ANGELIQUE L,782,Female,A,Yes
-JEWETT LAURA E,782,Female,A,No
-KANG HYEMIN,782,Female,A,Yes
-LINDSLEY KATHERINE E,782,Female,A,No
-STORCK CLAIRE C,782,Female,A,Yes
-OKITKUN RITA A,782,Female,A,NA,
-BENNETT SEAN J,782,Male,A,Yes
-CHRISTMAN KEVIN W,782,Male,A,No
-ANSANH COURTNEY C,782,Female,B,Yes
-CHEN CHUN-HAO,782,Female,B,Yes
-COSTELLO KRISTIN F,782,Female,B,No
-DUBOSE JENNIFER L,782,Female,B,No
-GAFFNEY ALISON N,782,Female,B,No
-HELLER RACHEL A,782,Female,B,Yes
-NERI MARY A,782,Female,B,Yes
-STERLING SARAH F,782,Female,B,No
-WELLS DOROTHY H,782,Female,B,No
-JORDAN ASHLI E,782,Female,B,NA,
-LAFFERTY NICOLE E,782,Female,B,NA,
-ROBINSON BRIAN M,782,Male,B,No
-FARRELL JENNIFER E,783,Female,A,No
-LOEWEN REBECCA M,783,Female,A,No
-MURAKAMI KELLIE C,783,Female,A,No
-SOLOZHUK EVANGELINE C,783,Female,A,No
-DEPEW TIFFANIE M,783,Female,A,Yes
-JOHNSON CRYSTAL H,783,Female,A,Yes
-WILSON BLAIR W,783,Female,A,Yes
-ABDUL-ALIM ASIYA M,783,Female,A,NA,
-CLOWES SARAH E,783,Female,A,NA,
-ALIAGHAI NAVID J,783,Male,A,Yes
-GOODWIN SHARON P,783,Female,B,No
-LEONARD KATHERINE H,783,Female,B,No
-SADDLER HEATHER A,783,Female,B,No
-TAYLOR AMY R,783,Female,B,No
-REID DEITRICH R,783,Female,B,No
-BELLO COURTNEY M,783,Female,B,Yes
-CUNDY JANINE E,783,Female,B,Yes
-EVANS ANNA M,783,Female,B,Yes
-LOMNICKY VICKI C,783,Female,B,Yes
-SIAGIAN DIEGO,783,Male,B,Yes
-HOLMQUIST GABRIELLE H,784,Female,A,No
-JUENEMANN GAYLE K,784,Female,A,No
-PAYNE CARA C,784,Female,A,No
-SPADE KRISTEN J,784,Female,A,No
-BELL NEYSA C,784,Female,A,Yes
-CARY LISA,784,Female,A,Yes
-NGUYEN MELYSSA,784,Female,A,Yes
-POROLNICZAK JAGODA,784,Female,A,Yes
-WEISNER ERIKA J,784,Female,A,Yes
-FLORES ZACHARY G,784,Male,A,No
-CASHMAN KATHERINE A,784,Female,B,No
-GARZA HYON-HE K,784,Female,B,No
-PARAGGUA MARIATERESITA,784,Female,B,No
-CARRERA STEPHANIE N,784,Female,B,Yes
-IZDEPSKI CLAIRE A,784,Female,B,Yes
-loft,784,Female,B,Yes
-SOKCHAROEUN SOPHON N,784,Female,B,Yes
-UPTON MEGHAN A,784,Female,B,Yes
-WILLIAMS MARK M,784,Male,B,Yes
-BAUER EMMIE L,891,Female,A,Yes
-CONNOLE MARAH L,891,Female,A,Yes
-ERICKSON JENNILYN P,891,Female,A,Yes
-HOSSLER ROBYN L,891,Female,A,No
-KIM LINDA N,891,Female,A,No
-MCCAULEY ALEXIS A,891,Female,A,Yes
-SNIDER ERIN E,891,Female,A,No
-ST.HILAIRE JENNY W,891,Female,A,Yes
-WOODROME JACLYN K,891,Female,A,No
-DUFF NORMAN P,891,Male,A,No
-CAIRNS JOANNA R,891,Female,B,Yes
-GUARINO DENISE M,891,Female,B,No
-IMPERT CELINE T,891,Female,B,Yes
-JORDAN ANDREA N,891,Female,B,No
-LIABRAATEN ANNALISE L,891,Female,B,Yes
-MCAFEE MARIAH K,891,Female,B,Yes
-NIDA DARRA FAITH YOUNG,891,Female,B,Yes
-SORTUN KATE H,891,Female,B,No
-GEGAX JOHN D,891,Male,B,Yes
-ALTHAUSER CASSANDRA R,892,Female,A,No
-CORMACK DANIELLE L,892,Female,A,No
-DU-NANN DANIELLE A,892,Female,A,Yes
-GEVAART-DURKIN ASHLEY,892,Female,A,Yes
-LARSEN AUDREY L,892,Female,A,Yes
-MEDINA VICTORIA E,892,Female,A,Yes
-PATRICK KIMBERLY A,892,Female,A,No
-SHAWVER LAURA R,892,Female,A,Yes
-GROSS EVAN J,892,Male,A,No
-POWELL VINCENT D,892,Male,A,Yes
-YEH ALEXANDER H,892,Male,A,No
-CLARK MEAGAN E,892,Female,B,No
-DAVIS SHANNON A,892,Female,B,Yes
-FUJIHARA AMBER R,892,Female,B,Yes
-KELLY ADRIANN M,892,Female,B,No
-LIVENGOOD EMILY E,892,Female,B,No
-MORGAN REBECCA J,892,Female,B,No
-RENTERIA NORMA N,892,Female,B,Yes
-SUH SALLY,892,Female,B,No
-TAYLOR RACHEL S,892,Female,B,Yes
-SILVA ROBERT D,892,Male,B,No
-CIEPLENSKI SARAH A,893,Female,A,No
-CROW KARYN E,893,Female,A,No
-GUESS KATIE V,893,Female,A,No
-KRALJEVICH SOPHIA O,893,Female,A,Yes
-READY MELISSA L,893,Female,A,No
-SORENSEN STEFANIE A,893,Female,A,No
-Hilderman,893,Female,A,Yes
-LESLIE TODD R,893,Male,A,Yes
-ANDERSON SARAH J,893,Female,B,No
-FEYL CAROLINE E,893,Female,B,Yes
-GINNIS MIRIA F,893,Female,B,Yes
-HOEKMAN SHAN-YU,893,Female,B,No
-KATTERMAN SARAH L,893,Female,B,No
-NOHA TINA D,893,Female,B,Yes
-PHILAKHAM HOLLY,893,Female,B,No
-STREICH REBECCA A,893,Female,B,Yes
-HIRSCH NATE,893,Male,B,No
-"Nicholson, Angela",901,Female,A,Yes
-"Riggers, Lauren",901,Female,A,No
-"Baglien, Paige",901,Female,A,No
-"Isbell, Joliet",901,Female,A,No
-"Kabiru, Annbritah",901,Female,A,Yes
-"Stern, Johanna",901,Female,A,No
-"Laws, Stephanie",901,Female,A,Yes
-"Oleson, Megan",901,Female,A,No
-"Caron, Shannon",901,Female,A,Yes
-"Altvater, Sarah",901,Female,A,Yes
-"reyes, cherie",901,Female,A,Yes
-"Zeno, George",901,Male,A,Yes
-"Stutz, Jason",901,Male,A,No
-"Wild, Jenna",901,Female,B,Yes
-"Perkins, Maya",901,Female,B,Yes
-"Norwood, Melissa",901,Female,B,Yes
-"Hong, Eunjin",901,Female,B,Yes
-"Moffet, Ronald",901,Male,B,No
+name	quarter	gender	version	prenup
+marianne	1673	Female	B	Yes
+aleshya	1673	Female	A	NA
+dana griffin	1673	Female	A	No
+dianne	1673	Female	A	No
+jean greggor	1673	Male	A	No
+Juliana Broussard	1673	Female	A	Yes
+kira	1673	Female	A	Yes
+Lindsay Muratore	1673	Female	A	Yes
+mathew	1673	Male	A	Yes
+megan gosselin	1673	Female	A	NA
+nathan Ho	1673	Male	A	No
+Samantha Ungson	1673	Female	A	NA
+taijh clark	1673	Female	A	Yes
+thomas willms	1673	Male	A	No
+anna martin	1673	Female	B	Yes
+devaswa	1673	Female	B	Yes
+diedre	1673	Female	B	Yes
+erica job	1673	Female	B	Yes
+ian mckenzie	1673	Male	B	Yes
+lauren thompson	1673	Female	A	Yes
+lindsey brook	1673	Female	B	Yes
+Mariela Salcedo	1673	Female	B	No
+rose	1673	Female	B	No
+sara conklin	1673	Female	B	Yes
+sara martin	1673	Female	B	Yes
+tiffany	1673	Female	B	No
+ADEKANBI ABIOLA A	1564	Male	A	NA
+ALMGREN CHRISTOPHER J	1564	Male	B	NA
+ASHBURN JAMEE L	1564	Female	A	NA
+BEETON JOHN T	1564	Male	A	NA
+BERG JACOB A	1564	Male	B	NA
+COPELAND EMILY D	1564	Female	B	NA
+DEMELLA JENNIFER M	1564	Female	A	NA
+HAMERLY CHRISTOPHER M	1564	Male	A	NA
+IRAOLA MARIA-JOSEFA M	1564	Female	B	NA
+KALNASY EMMA R	1564	Female	A	NA
+LERVAAG KELSEY M	1564	Female	B	NA
+MARROQUIN PAULA	1564	Female	A	NA
+MILLER BRANDON F	1564	Male	B	NA
+MIX ARIANA K	1564	Female	B	NA
+OHKI SHIORI I	1564	Female	A	NA
+PENARANDA RICHARD R	1564	Male	A	NA
+RAIFORD HANNA Z	1564	Female	B	NA
+SALEEM FATIMAH A	1564	Female	A	NA
+SHEPPARD MELANIE C	1564	Female	B	NA
+SHRIVER CELIA J	1564	Female	A	NA
+SOLTOW REBECCA L	1564	Female	B	NA
+TELLIER HALLEE A	1564	Female	A	NA
+TESFAYE MAHALET H	1564	Female	B	NA
+THURMOND MIGNON X	1564	Female	A	NA
+TORRES SARAH E	1564	Female	B	NA
+TRASK ALICIA M	1564	Female	B	NA
+teri bikowsky	1561	Female	A	No
+Sarah Bolla	1561	Female	A	No
+Kira Brodie	1561	Female	A	No
+Zarajane Macapobre	1561	Female	A	Yes
+Felicia Mancera Rayne	1561	Female	A	No
+Amy Nance	1561	Female	A	Yes
+Anna Nichols	1561	Female	A	NA
+Terri Swensen	1561	Female	A	No
+Kelsey Tengesdal	1561	Female	A	Yes
+cheryl tran	1561	Female	A	No
+Sabrina Tran	1561	Female	A	NA
+Iris Vonberg	1561	Female	A	No
+Erik Geving	1561	Male	A	No
+Lee Hitchen	1561	Male	A	No
+Kevin Rivard	1561	Male	A	No
+Brett Zalkan	1561	Male	A	No
+Jinyi Bishop	1561	Female	B	Yes
+Kara Coughlin	1561	Female	B	Yes
+Corey Dugan Barrett	1561	Female	B	Yes
+Catherine Hannan	1561	Female	B	Yes
+Patricia Mulate	1561	Female	B	No
+Shiney Pacci-Alva	1561	Female	B	NA
+Jarylin Reese	1561	Female	B	Yes
+Jessica Schiers	1561	Female	B	Yes
+Misty Sellgren	1561	Female	B	Yes
+Julia Shure	1561	Female	B	Yes
+anne st clair	1561	Female	B	Yes
+Hadassa Torres	1561	Female	B	No
+Brooke Usrey	1561	Female	B	No
+Jeffrey D'Angelo	1561	Male	B	No
+Lukas Moedritzer	1561	Male	B	No
+ANTHONY RODRIGUEZ	1561	Male	B	Yes
+Brian Tarcea	1561	Male	B	Yes
+amy	673	Female	A	No
+diana	673	Female	A	No
+jenna	673	Female	A	Yes
+liesl	673	Female	A	No
+merril	673	Female	A	Yes
+julie	673	Female	A	Yes
+shane	673	Male	A	Yes
+daniel	673	Male	A	No
+risa	673	Male	A	Yes
+peter	673	Male	A	Yes
+natasha	673	Female	B	Yes
+carrie	673	Female	B	No
+christy	673	Female	B	No
+elaine	673	Female	B	Yes
+tarek	673	Male	B	No
+lamin	673	Male	B	Yes
+jim	673	Male	B	No
+BERGMAN DONNA C	674	Female	A	No
+CHONG-TIM AMANDA N	674	Female	A	No
+JOHNSON SARAH C	674	Female	A	No
+OTOOLE LAUREN K	674	Female	A	No
+WALTER CHELSEA	674	Female	A	Yes
+MANAHAN DIANE E	674	Female	A	No
+MOON AUSTIN	674	Male	A	No
+WHARTON MATTHEW R	674	Male	A	Yes
+KANESHIRO TIFFANY S	674	Female	B	Yes
+LEIGHTON TINA M	674	Female	B	Yes
+MACMILLAN DAYNA L	674	Female	B	Yes
+MCGRATH KATHRYN A	674	Female	B	Yes
+MUNSON ALISON J	674	Female	B	Yes
+RAMOS RAVYN B	674	Female	B	Yes
+YOSEPH BEREKTI T	674	Female	B	Yes
+FRANZEN ANNA L	674	Female	B	Yes
+BERJAC DANIEL X	674	Male	B	Yes
+COGLON ANDREW B	674	Male	B	No
+antonich	781	Female	A	No
+bystrom	781	Female	A	No
+chandler	781	Female	A	No
+english	781	Female	A	No
+franson-akagi	781	Female	A	No
+gosnell	781	Female	A	No
+gozali	781	Female	A	Yes
+hilzinger	781	Female	A	Yes
+klump	781	Female	A	No
+ludeman	781	Female	A	No
+luther	781	Female	A	NA
+mcCue	781	Female	A	NA
+MILLER JANICE C	781	Female	A	NA
+reyes	781	Female	A	Yes
+stephens	781	Female	A	No
+zetlen	781	Female	A	No
+breton	781	Male	A	Yes
+daggett	781	Male	A	No
+halim	781	Male	A	No
+jangaard	781	Male	A	No
+leliaert	781	Male	A	Yes
+abualrub	781	Female	B	No
+beckley	781	Female	B	NA
+chambers	781	Female	B	Yes
+demetrescu	781	Female	B	No
+derrick	781	Female	B	No
+duffield	781	Female	B	Yes
+kaufman	781	Female	B	No
+lee2	781	Female	B	Yes
+richardson	781	Female	B	Yes
+roach	781	Female	B	No
+ross	781	Female	B	NA
+stephan	781	Female	B	Yes
+wilson	781	Female	B	No
+bourne	781	Male	B	Yes
+reichert	781	Male	B	Yes
+treser	781	Male	B	No
+CLARK TRACEY L	782	Female	A	No
+DEPAZ ZOE I	782	Female	A	Yes
+ERIE GALE S	782	Female	A	No
+GODLEY ANGELIQUE L	782	Female	A	Yes
+JEWETT LAURA E	782	Female	A	No
+KANG HYEMIN	782	Female	A	Yes
+LINDSLEY KATHERINE E	782	Female	A	No
+STORCK CLAIRE C	782	Female	A	Yes
+OKITKUN RITA A	782	Female	A	NA
+BENNETT SEAN J	782	Male	A	Yes
+CHRISTMAN KEVIN W	782	Male	A	No
+ANSANH COURTNEY C	782	Female	B	Yes
+CHEN CHUN-HAO	782	Female	B	Yes
+COSTELLO KRISTIN F	782	Female	B	No
+DUBOSE JENNIFER L	782	Female	B	No
+GAFFNEY ALISON N	782	Female	B	No
+HELLER RACHEL A	782	Female	B	Yes
+NERI MARY A	782	Female	B	Yes
+STERLING SARAH F	782	Female	B	No
+WELLS DOROTHY H	782	Female	B	No
+JORDAN ASHLI E	782	Female	B	NA
+LAFFERTY NICOLE E	782	Female	B	NA
+ROBINSON BRIAN M	782	Male	B	No
+FARRELL JENNIFER E	783	Female	A	No
+LOEWEN REBECCA M	783	Female	A	No
+MURAKAMI KELLIE C	783	Female	A	No
+SOLOZHUK EVANGELINE C	783	Female	A	No
+DEPEW TIFFANIE M	783	Female	A	Yes
+JOHNSON CRYSTAL H	783	Female	A	Yes
+WILSON BLAIR W	783	Female	A	Yes
+ABDUL-ALIM ASIYA M	783	Female	A	NA
+CLOWES SARAH E	783	Female	A	NA
+ALIAGHAI NAVID J	783	Male	A	Yes
+GOODWIN SHARON P	783	Female	B	No
+LEONARD KATHERINE H	783	Female	B	No
+SADDLER HEATHER A	783	Female	B	No
+TAYLOR AMY R	783	Female	B	No
+REID DEITRICH R	783	Female	B	No
+BELLO COURTNEY M	783	Female	B	Yes
+CUNDY JANINE E	783	Female	B	Yes
+EVANS ANNA M	783	Female	B	Yes
+LOMNICKY VICKI C	783	Female	B	Yes
+SIAGIAN DIEGO	783	Male	B	Yes
+HOLMQUIST GABRIELLE H	784	Female	A	No
+JUENEMANN GAYLE K	784	Female	A	No
+PAYNE CARA C	784	Female	A	No
+SPADE KRISTEN J	784	Female	A	No
+BELL NEYSA C	784	Female	A	Yes
+CARY LISA	784	Female	A	Yes
+NGUYEN MELYSSA	784	Female	A	Yes
+POROLNICZAK JAGODA	784	Female	A	Yes
+WEISNER ERIKA J	784	Female	A	Yes
+FLORES ZACHARY G	784	Male	A	No
+CASHMAN KATHERINE A	784	Female	B	No
+GARZA HYON-HE K	784	Female	B	No
+PARAGGUA MARIATERESITA	784	Female	B	No
+CARRERA STEPHANIE N	784	Female	B	Yes
+IZDEPSKI CLAIRE A	784	Female	B	Yes
+loft	784	Female	B	Yes
+SOKCHAROEUN SOPHON N	784	Female	B	Yes
+UPTON MEGHAN A	784	Female	B	Yes
+WILLIAMS MARK M	784	Male	B	Yes
+BAUER EMMIE L	891	Female	A	Yes
+CONNOLE MARAH L	891	Female	A	Yes
+ERICKSON JENNILYN P	891	Female	A	Yes
+HOSSLER ROBYN L	891	Female	A	No
+KIM LINDA N	891	Female	A	No
+MCCAULEY ALEXIS A	891	Female	A	Yes
+SNIDER ERIN E	891	Female	A	No
+ST.HILAIRE JENNY W	891	Female	A	Yes
+WOODROME JACLYN K	891	Female	A	No
+DUFF NORMAN P	891	Male	A	No
+CAIRNS JOANNA R	891	Female	B	Yes
+GUARINO DENISE M	891	Female	B	No
+IMPERT CELINE T	891	Female	B	Yes
+JORDAN ANDREA N	891	Female	B	No
+LIABRAATEN ANNALISE L	891	Female	B	Yes
+MCAFEE MARIAH K	891	Female	B	Yes
+NIDA DARRA FAITH YOUNG	891	Female	B	Yes
+SORTUN KATE H	891	Female	B	No
+GEGAX JOHN D	891	Male	B	Yes
+ALTHAUSER CASSANDRA R	892	Female	A	No
+CORMACK DANIELLE L	892	Female	A	No
+DU-NANN DANIELLE A	892	Female	A	Yes
+GEVAART-DURKIN ASHLEY	892	Female	A	Yes
+LARSEN AUDREY L	892	Female	A	Yes
+MEDINA VICTORIA E	892	Female	A	Yes
+PATRICK KIMBERLY A	892	Female	A	No
+SHAWVER LAURA R	892	Female	A	Yes
+GROSS EVAN J	892	Male	A	No
+POWELL VINCENT D	892	Male	A	Yes
+YEH ALEXANDER H	892	Male	A	No
+CLARK MEAGAN E	892	Female	B	No
+DAVIS SHANNON A	892	Female	B	Yes
+FUJIHARA AMBER R	892	Female	B	Yes
+KELLY ADRIANN M	892	Female	B	No
+LIVENGOOD EMILY E	892	Female	B	No
+MORGAN REBECCA J	892	Female	B	No
+RENTERIA NORMA N	892	Female	B	Yes
+SUH SALLY	892	Female	B	No
+TAYLOR RACHEL S	892	Female	B	Yes
+SILVA ROBERT D	892	Male	B	No
+CIEPLENSKI SARAH A	893	Female	A	No
+CROW KARYN E	893	Female	A	No
+GUESS KATIE V	893	Female	A	No
+KRALJEVICH SOPHIA O	893	Female	A	Yes
+READY MELISSA L	893	Female	A	No
+SORENSEN STEFANIE A	893	Female	A	No
+Hilderman	893	Female	A	Yes
+LESLIE TODD R	893	Male	A	Yes
+ANDERSON SARAH J	893	Female	B	No
+FEYL CAROLINE E	893	Female	B	Yes
+GINNIS MIRIA F	893	Female	B	Yes
+HOEKMAN SHAN-YU	893	Female	B	No
+KATTERMAN SARAH L	893	Female	B	No
+NOHA TINA D	893	Female	B	Yes
+PHILAKHAM HOLLY	893	Female	B	No
+STREICH REBECCA A	893	Female	B	Yes
+HIRSCH NATE	893	Male	B	No
+"Nicholson, Angela"	901	Female	A	Yes
+"Riggers, Lauren"	901	Female	A	No
+"Baglien, Paige"	901	Female	A	No
+"Isbell, Joliet"	901	Female	A	No
+"Kabiru, Annbritah"	901	Female	A	Yes
+"Stern, Johanna"	901	Female	A	No
+"Laws, Stephanie"	901	Female	A	Yes
+"Oleson, Megan"	901	Female	A	No
+"Caron, Shannon"	901	Female	A	Yes
+"Altvater, Sarah"	901	Female	A	Yes
+"reyes, cherie"	901	Female	A	Yes
+"Zeno, George"	901	Male	A	Yes
+"Stutz, Jason"	901	Male	A	No
+"Wild, Jenna"	901	Female	B	Yes
+"Perkins, Maya"	901	Female	B	Yes
+"Norwood, Melissa"	901	Female	B	Yes
+"Hong, Eunjin"	901	Female	B	Yes
+"Moffet, Ronald"	901	Male	B	No
