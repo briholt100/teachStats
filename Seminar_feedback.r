@@ -3,12 +3,13 @@
 ####
 library(tidyr)
 library(dplyr)
+library(ggplot2)
 
 getwd()
 #on Dater
 setwd("/home/brian/Projects/teachstats")
 #on campus
-#setwd("I:\\My Data Sources\\aljd;j")
+#setwd("I:\\My Data Sources\\classroom stuff")
 #on Latitude
 #setwd("/home/brian/Projects/teachstats")
 sf<-read.csv(
@@ -107,3 +108,8 @@ write.csv(Rated_scores,file="./RatedSeminarScores.csv")
 
 Rated_Comments<-WhoRatedWhom %>% arrange(-desc(Rated)) %>% group_by(Rated) %>% select(Rated,Comments)
 write.csv(Rated_Comments,file="./SeminarComments.csv")
+
+
+
+
+ggplot(Rated_scores,aes(x=Average.Breadth))+geom_histogram()
