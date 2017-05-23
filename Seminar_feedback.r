@@ -110,9 +110,9 @@ Rated_Comments<-WhoRatedWhom %>% arrange(-desc(Rated)) %>% group_by(Rated) %>% s
 write.csv(Rated_Comments,file="./SeminarComments.csv")
 
 
-#This pulls finds sharon and her self-rating
+#Thse pulls finds sharon and her self-rating
 
-WhoRatedWhom %>%  filter(grepl("Sharon",Rater,ignore.case=T) & grepl("Sharon",Rated,ignore.case=T)) %>% arrange(-desc(Rated))
+WhoRatedWhom %>%  filter(grepl("Sharon",Rated,ignore.case=T)) %>% arrange(-desc(Rated))
 
 
 #makes a histogram
