@@ -13,7 +13,7 @@ setwd("/home/brian/Projects/teachstats")
 #on Latitude
 #setwd("/home/brian/Projects/teachstats")
 sf<-read.csv(
-  "./MMP_seminar_feedback.csv"
+  "./MMP_seminar_WWW_feedback.csv"
   , encoding = "UTF-8")
 
 colnames(sf)<-c("Timestamp", "first.last.name", "student_self_reflect",
@@ -34,19 +34,19 @@ colnames(sf)<-c("Timestamp", "first.last.name", "student_self_reflect",
 
 
 #This just selects and groups
-df<-sf %>% select(first.last.name,first.student,second.student,third.student,fourth.student,fifth.student) %>% group_by(desc(first.last.name))
+df<-sf %>% select(first.last.name,first.student,second.student,third.student,fourth.student,fifth.student,sixth.student,seventh.student) %>% group_by(desc(first.last.name))
 
 
 ##tidy to make columns meaningful
 #to see who graded whom
-df<-sf %>% select(first.last.name,first.student,second.student,third.student,fourth.student,fifth.student) %>% gather(subj,student,first.student:fifth.student)
+df<-sf %>% select(first.last.name,first.student,second.student,third.student,fourth.student,fifth.student,sixth.student) %>% gather(subj,student,first.student:fifth.student)
 
 head(df)
 
 
 ##must remove shihao Mei and Emily and tests
 
-removeCases<-grep("shihao|stehr|holt|''|test",sf$first.last.name,ignore.case =T)
+removeCases<-grep("holt|''|test",sf$first.last.name,ignore.case =T)
 sf<-(sf[-removeCases,])
 sf<-droplevels(sf)
 
@@ -89,7 +89,15 @@ df5<-sf %>% select(fifth.student:fifth.text,first.last.name) %>% rename(Rated = 
                                                              ,Comments = fifth.text)
 
 
-WhoRatedWhom<-rbind(df1,df2,df3,df4,df5)
+df6<-sf %>% select(sixth.student:sixth.text,first.last.name) %>% rename(Rated = sixth.student,Rater=first.last.name
+                                                                        ,Clarity=sixth.clear
+                                                                        ,Depth=sixth.depth
+                                                                        ,Breadth=sixth.breadth
+                                                                        ,Comments = sixth.text)
+
+
+
+WhoRatedWhom<-rbind(df1,df2,df3,df4,df5,df6)
 #remove brian holt from rated
 WhoRatedWhom<-WhoRatedWhom[-grep("holt",WhoRatedWhom$Rated,ignore.case =T),]
 #####
@@ -100,14 +108,14 @@ Rated_scores<-WhoRatedWhom %>% arrange(-desc(Rated)) %>% group_by(Rated) %>% sum
   Average.Clarity = mean(Clarity,na.rm=T),Std.Dev.Clarity = sd(Clarity,na.rm=T),
   Average.Depth = mean(Depth,na.rm=T),Std.Dev.Depth = sd(Depth,na.rm=T),
   Average.Breadth = mean(Breadth,na.rm=T),Std.Dev.Breadth = sd(Breadth,na.rm=T),
-  Num.of.Raters=n())
+  Num.of.Raters=n()) 
 
-write.csv(Rated_scores,file="./RatedSeminarScores.csv")
+write.csv(Rated_scores,file="./RatedSeminarScores_WWW.csv")
 
 
 
 Rated_Comments<-WhoRatedWhom %>% arrange(-desc(Rated)) %>% group_by(Rated) %>% select(Rated,Comments)
-write.csv(Rated_Comments,file="./SeminarComments.csv")
+write.csv(Rated_Comments,file="./SeminarComments_WWW.csv")
 
 
 #Thse pulls finds sharon and her self-rating
