@@ -108,7 +108,7 @@ Rated_scores<-WhoRatedWhom %>% arrange(-desc(Rated)) %>% group_by(Rated) %>% sum
   Average.Clarity = mean(Clarity,na.rm=T),Std.Dev.Clarity = sd(Clarity,na.rm=T),
   Average.Depth = mean(Depth,na.rm=T),Std.Dev.Depth = sd(Depth,na.rm=T),
   Average.Breadth = mean(Breadth,na.rm=T),Std.Dev.Breadth = sd(Breadth,na.rm=T),
-  Num.of.Raters=n()) 
+  Num.of.Raters=n())
 
 write.csv(Rated_scores,file="./RatedSeminarScores_WWW.csv")
 
@@ -124,4 +124,4 @@ WhoRatedWhom %>%  filter(grepl("Sharon",Rated,ignore.case=T)) %>% arrange(-desc(
 
 
 #makes a histogram
-ggplot(Rated_scores,aes(x=Average.Breadth))+geom_histogram()
+ggplot(Rated_scores,aes(x=Average.Clarity))+geom_histogram()
