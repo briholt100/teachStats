@@ -35,4 +35,6 @@ sf$Self_Identity<-ifelse(grepl("identity",sf$Presentation_Demonstrated) , 1 , 0)
 sf$How_Media_Create_Narratives<-ifelse(grepl("narratives about movements",sf$Presentation_Demonstrated) , 1 , 0)
 
 
-sf %>% select(Group,Media_definitions:How_Media_Create_Narratives) %>% group_by(Group) %>% summarize((n()))
+demonstration<-sf %>% select(Group,Media_definitions:How_Media_Create_Narratives) %>% group_by(Group)
+demonstration %>% group_by(Group:How_Media_Create_Narratives) %>%   summarize(n())
+table(demonstration$Group,demonstration$Media_definitions)
