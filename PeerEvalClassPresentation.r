@@ -25,7 +25,7 @@ str(peerPresent)
 
 #who did the ratings?
 
-peerPresent %>% group_by(first.last.name) %>% summarize(n())
+peerPresent %>% group_by(first.last.name) %>% select(first.last.name,Student) %>% filter(grepl('mary',first.last.name,ignore.case=T))
 
 
 PeerPresentEvalsComments<-peerPresent %>% arrange(-desc(Student)) %>% group_by(Student) %>% select(Student,Tasks_completed,General_Comments)
