@@ -13,6 +13,9 @@ with open ('I:\\current quarter\\personality\\Zonal\\Chapter 2.txt','r') as f:
 #   Assumes answer line is 9 characters
     ######
 
+for l in lines:
+    print (l)
+
 answers={}
 i=0
 for l in lines:
@@ -40,6 +43,7 @@ print Questions
 
 
 Choices={}
+# When doing this, keep two counters, 1 counter that updates if and only if the line begins with a number, and then teh 2nd counter is pegged to A-D
 i=0
 for l in lines[0:20]:
     print l
