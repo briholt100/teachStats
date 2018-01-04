@@ -6,8 +6,8 @@ Created on Wed Jan 03 13:24:00 2018
 """
 #example = "1) test question. \n A) choice 1\nB) choice 2\nAnswer B\n2) test question2. \n A) choice 1.2\nB) choice 2.2\nAnswer A\n"
  #   lines = [example.strip() for  line in example]
-with open ('/home/brian/Projects/teachstats/Chapter 2.txt','r') as f:
-#with open ('I:\\current quarter\\personality\\Zonal\\Chapter 2.txt','r') as f:
+#with open ('/home/brian/Projects/teachstats/Chapter 2.txt','r') as f:
+with open ('I:\\current quarter\\personality\\Zonal\\Chapter 2.txt','r') as f:
     lines = [line.strip() for  line in f]
 print(lines)
     #the following will make an answer key
@@ -68,5 +68,15 @@ for x in Choices:
     
     
 for k, v in Choices.items():
-    print(k, v[5]) #prints answer
-    
+    print(k, v[4]) #prints answer
+
+
+#now I need to evaluate the answer which in a key:value pair would be value[5] and to use the last character in that element to then mark a correct answer in values[1-4]
+
+
+for k, v in Choices.items():
+    print('{}-- {} \n\n {}\n{}\n\n'.format(k,v[0],v[1:4], v[5][-1]))
+    #prints letter answer
+
+
+print("{}. {} appears {} times.".format(i, key, wordBank[key]))
