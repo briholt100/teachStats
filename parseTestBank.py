@@ -15,34 +15,7 @@ print(lines)
 #   Assumes answer line is 9 characters
     ######
 
-for l in lines:
-    print (l)
-
-answers={}
-i=0
-for l in lines:
-    if 'Answer' in l:
-        print (l[8:9])
-        i+=1        
-        answers[i]=l[8]
-        
-print (answers,i)
-
-#the following will make a question dict
-    #####
-#   But no choices
-    ######
-
 import re
-Questions={}
-i=0
-for l in lines:
-    if re.search('[0-9]{1,2}\)',l):#searches for item number '1)-99)'
-        i+=1        
-        #Must strip out Q item number
-        Questions[i]=l
-print (Questions)
-
 from collections import defaultdict
 Choices=defaultdict(list)
 # When doing this, keep two counters, 1 counter that updates if and only if the line begins with a number, and then teh 2nd counter is pegged to A-D
@@ -68,15 +41,14 @@ for x in Choices:
     
     
 for k, v in Choices.items():
-    print(k, v[4]) #prints answer
-
-
-#now I need to evaluate the answer which in a key:value pair would be value[5] and to use the last character in that element to then mark a correct answer in values[1-4]
+    print(k, v[5]) #prints answer
 
 
 for k, v in Choices.items():
-    print('{}-- {} \n\n {}\n{}\n\n'.format(k,v[0],v[1:4], v[5][-1]))
-    #prints letter answer
-
-
-print("{}. {} appears {} times.".format(i, key, wordBank[key]))
+    for i in range(1,5):
+        if v[i][0] == v[5][8]:
+            #print ('{}'.format(v[i]))
+            print('{}...\n={}...Answer: {}'.format(v[0],v[i],v[5]))
+        else:
+            print('~{}'.format(v[i]))            
+ 
