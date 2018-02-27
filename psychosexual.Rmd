@@ -1,0 +1,37 @@
+---
+title: "Test Scantron"
+author: "Brian Holt"
+date: "February 27, 2018"
+output: pdf_document
+---
+
+```{r data generation, echo = FALSE, results = "hide"}
+## DATA GENERATION
+```
+Question
+========
+2.	Who called the stages of development psychosexual stages?
+
+
+A. Erik Erikson
+B. Jean Piaget
+C. Lawrence Kohlberg
+D. Sigmund Freud
+
+Solution
+========
+Sigmund Freud is partly infamous for his concept of the psychosexual stages
+
+Answerlist
+----------
+* False
+* False
+* False
+* True
+
+
+Meta-information
+================
+extype: mchoice
+exsolution: `r mchoice2string(solutions, single = TRUE)`
+exname: psychological development
