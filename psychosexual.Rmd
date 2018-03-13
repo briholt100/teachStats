@@ -33,5 +33,5 @@ Answerlist
 Meta-information
 ================
 extype: mchoice
-exsolution: `r mchoice2string(solutions, single = TRUE)`
+exsolution: 0001
 exname: psychological development
