@@ -5,7 +5,7 @@
 #install.packages("exams", dependencies = TRUE)
 library(exams)
 
-#setwd('I:\\My Data Sources\\classroom stuff')
+#setwd('U:\\Documents\\My Data Sources\\classroom stuff')
 myexam <- list('psychosexual.Rmd') #list of quesions.  Here, just 1 question is added
 
 ex1 <- exams2nops(myexam, n = 1, #selects how many questions will be pulled from "myexam"
