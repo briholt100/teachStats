@@ -1,11 +1,12 @@
 ##
 # to do this, make a markdown file with question and solution.  Here you can get very fancy with using random generated data, which will make unique question/answer content for your students
-# This file below, will then read that markdown document and crate a pDF.  
+# This file below, will then read that markdown document and crate a pDF.
 
 #install.packages("exams", dependencies = TRUE)
 library(exams)
 
 #setwd('I:\\My Data Sources\\classroom stuff')
+setwd('/home/brian/Projects/teachstats')
 myexam <- list('psychosexual.Rmd') #list of quesions.  Here, just 1 question is added
 
 ex1 <- exams2nops(myexam, n = 1, #selects how many questions will be pulled from "myexam"
