@@ -13,7 +13,7 @@ setwd('/home/brian/Projects/teachstats')
 myexam <- list('psychosexual.Rmd') #list of quesions.  Here, just 1 question is added
 
 ex1 <- exams2nops(myexam, n = 1, #selects how many questions will be pulled from "myexam"
-                  dir = "nops_pdf", name = "demo", date = "2018-02-27", #where to store
+                  dir = "nops_pdf", name = "demo", date = "2018-4-17", #where to store
                   points = c(3), showpoints = TRUE) #how many points the question is worth, here it's worth '3'
 
 
