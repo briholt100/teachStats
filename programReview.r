@@ -1,6 +1,6 @@
 library(tidyr)
 library(dplyr)
-setwd("U:\\Documents\\current quarter\\admin")
+setwd("U:\\Documents\\My Data Sources\\classroom stuff")
 
 data<-read.csv(file= './programReview.csv')
 #data<-read.csv(file= './Full Student Demographic Variables By Academic Year And Quart.csv')
@@ -29,5 +29,4 @@ df$quarter<-as.numeric(df$quarter)
 
 gender<-df %>% filter(factor=="Female" | factor=="Male"| factor=="(blank)")
 gender %>% group_by(year,type,factor) %>% summarize(total=sum(count,na.rm=T)) %>% mutate(freq=total/sum(total))
-
-
+gender %>% na.omit() %>% unite(year,year,quarter) %>% group_by(year,type,factor) %>% spread(year,count)
