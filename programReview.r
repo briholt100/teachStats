@@ -1,6 +1,6 @@
 library(tidyr)
 library(dplyr)
-setwd("U:\\Documents\\My Data Sources\\classroom stuff")
+#setwd("U:\\Documents\\My Data Sources\\classroom stuff")
 
 data<-read.csv(file= './programReview.csv')
 #data<-read.csv(file= './Full Student Demographic Variables By Academic Year And Quart.csv')
