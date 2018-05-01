@@ -8,6 +8,12 @@ data<-read.csv(file= './programReview.csv')
 #data<-colnames(c("group", 'variable',))
 
 data<-data[,1:14] #drops percentages columns
+
+ratio<-tail(data,11)
+colnames(ratio)<-c("type","class",c(rep(paste0("x1415",seq(1:4)))),c(rep(paste0("x1516",seq(1:4)))),c(rep(paste0("x1617",seq(1:4)))))
+ratio[,3:length(ratio)]<-  apply(ratio[,3:length(ratio)],2,function(x) as.numeric(x))
+ratio[ratio==0.0]<-NA
+apply(ratio[,3:length(ratio)],1,mean,na.rm=T)
 data[2:7,]
 str(data)
 colnames(data)<-c("type","factor",c(rep(paste0("x1415",seq(1:4)))),c(rep(paste0("x1516",seq(1:4)))),c(rep(paste0("x1617",seq(1:4)))))
@@ -29,4 +35,4 @@ df$quarter<-as.numeric(df$quarter)
 
 gender<-df %>% filter(factor=="Female" | factor=="Male"| factor=="(blank)")
 gender %>% group_by(year,type,factor) %>% summarize(total=sum(count,na.rm=T)) %>% mutate(freq=total/sum(total))
-gender %>% na.omit() %>% unite(year,year,quarter) %>% group_by(year,type,factor) %>% spread(year,count)
+mytable<-gender %>% na.omit() %>% unite(year,year,quarter) %>% mutate(i=row_number()) %>% spread(year,count)
