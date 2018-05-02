@@ -1,3 +1,12 @@
+
+rbinom(10,10,.5) # 10 is the number of observations while '1' is the number of trials. So, if this were 10 as well, there would a sum of 'successes' that were less than 10
+dbinom(3,10,.5)  # this determines the density,  aka probability of exact outcome, so x= 3 heads out of 10, is not the cumulative 0-3 but exactly 3 for example. for cumulative, use pbinom, or sum dbinom:
+sum(dbinom(3,10,.5),dbinom(2,10,.5),dbinom(1,10,.5),dbinom(0,10,.5))
+pbinom(3,10,.5)
+
+
+
+
 #coin_flip() does the flipping, two styles, by thumb is standard
 
 coin_flip<-function(type = .5, bias = .1){
