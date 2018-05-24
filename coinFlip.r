@@ -5,6 +5,20 @@ sum(dbinom(3,10,.5),dbinom(2,10,.5),dbinom(1,10,.5),dbinom(0,10,.5))
 pbinom(3,10,.5)
 
 
+b<-10^seq(1,5,len=1000) #creates a 1000 simulations ranging frmo 10^1 to 10^5
+
+
+#flip is a funciton that takes two parameters, b and x, which are the number of simulations and the probablity of the coin with a default of .5, also known as 50/50
+flip <-function(b,x=.5){
+  lapply(b,                   #lapply takes a vector and then applies a function with that vector
+         function(b) mean(rbinom(b,1,x)))  #rbinom is a base R function that randonly generates values based on the binomial forumla
+  }
+
+plot(log10(b),flip(b,.5),type='l',col='blue',ylim = c(.3,.8))  #plot will create a graph with log10(b) as the x axes and then pots the result of the flip() function above
+lines(log10(b),flip(b,.55),type='l',col='red')  #lines is like plot, but instead of creating a new plot, it overlays over top of the current plot
+
+
+
 
 
 #coin_flip() does the flipping, two styles, by thumb is standard
