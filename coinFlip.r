@@ -10,12 +10,29 @@ b<-10^seq(1,5,len=1000) #creates a 1000 simulations ranging frmo 10^1 to 10^5
 
 #flip is a funciton that takes two parameters, b and x, which are the number of simulations and the probablity of the coin with a default of .5, also known as 50/50
 flip <-function(b,x=.5){
-  lapply(b,                   #lapply takes a vector and then applies a function with that vector
+  sapply(b,                   #lapply takes a vector and then applies a function with that vector
          function(b) mean(rbinom(b,1,x)))  #rbinom is a base R function that randonly generates values based on the binomial forumla
   }
 
 plot(log10(b),flip(b,.5),type='l',col='blue',ylim = c(.3,.8))  #plot will create a graph with log10(b) as the x axes and then pots the result of the flip() function above
 lines(log10(b),flip(b,.55),type='l',col='red')  #lines is like plot, but instead of creating a new plot, it overlays over top of the current plot
+
+flip_list<-flip(b,.5)
+
+plot(flip_list[1:999]-flip_list[2:1000])
+abline(h=.01, col='red')
+
+
+fair_coin<-flip(b,.5)
+unfair_coin<-flip(b,.6)
+df<-data.frame(fair_coin,unfair_coin)
+
+p<-ggplot(data=df,aes(x=log10(b),y=fair_coin))+geom_line() #makes first graph, saves to 'p'
+
+p+ geom_line(aes(x=log10(b),y=unfair_coin,col='red')) #adds new graph to 'p'
+
+
+
 
 
 
