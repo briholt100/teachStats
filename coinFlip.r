@@ -1,10 +1,3 @@
-
-rbinom(10,10,.5) # 10 is the number of observations while '1' is the number of trials. So, if this were 10 as well, there would a sum of 'successes' that were less than 10
-dbinom(3,10,.5)  # this determines the density,  aka probability of exact outcome, so x= 3 heads out of 10, is not the cumulative 0-3 but exactly 3 for example. for cumulative, use pbinom, or sum dbinom:
-sum(dbinom(3,10,.5),dbinom(2,10,.5),dbinom(1,10,.5),dbinom(0,10,.5))
-pbinom(3,10,.5)
-
-
 b<-10^seq(1,5,len=1000) #creates a 1000 simulations ranging frmo 10^1 to 10^5
 
 
@@ -12,7 +5,7 @@ b<-10^seq(1,5,len=1000) #creates a 1000 simulations ranging frmo 10^1 to 10^5
 flip <-function(b,x=.5){
   sapply(b,                   #lapply takes a vector and then applies a function with that vector
          function(b) mean(rbinom(b,1,x)))  #rbinom is a base R function that randonly generates values based on the binomial forumla
-  }
+}
 
 plot(log10(b),flip(b,.5),type='l',col='blue',ylim = c(.3,.8))  #plot will create a graph with log10(b) as the x axes and then pots the result of the flip() function above
 lines(log10(b),flip(b,.55),type='l',col='red')  #lines is like plot, but instead of creating a new plot, it overlays over top of the current plot
@@ -34,6 +27,11 @@ p+ geom_line(aes(x=log10(b),y=unfair_coin,col='red')) #adds new graph to 'p'
 
 
 
+
+rbinom(10,10,.5) # 10 is the number of observations while '1' is the number of trials. So, if this were 10 as well, there would a sum of 'successes' that were less than 10
+dbinom(3,10,.5)  # this determines the density,  aka probability of exact outcome, so x= 3 heads out of 10, is not the cumulative 0-3 but exactly 3 for example. for cumulative, use pbinom, or sum dbinom:
+sum(dbinom(3,10,.5),dbinom(2,10,.5),dbinom(1,10,.5),dbinom(0,10,.5))
+pbinom(3,10,.5)
 
 
 
@@ -62,3 +60,26 @@ probability<-(c(rep(1/7,5),.2857143)) #probabilty that the dice is loaded for 6
   probability<-c(.5,.5) #probabilty that the coin is fair = .5
   mean(replicate(1000,sample(x,1,replace = T,prob=probability)))
   
+#simulation game
+  
+  
+  
+  
+  #establish players, beginning money
+  #player_stash <- 10
+  
+  #flip game
+  # 1. bet_options<-c(1,2,3)
+  #2. n<-2 #number of players
+  #3 determine pot?  unnecessary
+  #4 determine winner or loser
+  #     person who flips calls h/t
+  #    rbinom(1,1,.5)
+  #   if call - bet =0, then caller wins
+  # if call - bet  != 0 then non caller wins
+  # winner has their stash += bet
+  # loser has tehir stash reduced -= bet
+  
+  
+  
+  #sample from 
