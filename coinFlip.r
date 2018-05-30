@@ -19,7 +19,7 @@ abline(h=.01, col='red')
 fair_coin<-flip(b,.5)
 unfair_coin<-flip(b,.6)
 df<-data.frame(fair_coin,unfair_coin)
-
+library(ggplot2)
 p<-ggplot(data=df,aes(x=log10(b),y=fair_coin))+geom_line() #makes first graph, saves to 'p'
 
 p+ geom_line(aes(x=log10(b),y=unfair_coin,col='red')) #adds new graph to 'p'
@@ -64,19 +64,33 @@ probability<-(c(rep(1/7,5),.2857143)) #probabilty that the dice is loaded for 6
   
   
   
-  
+   
+  #flip game 
   #establish players, beginning money
+  p1<-10;p2<-10
   #player_stash <- 10
-  
-  #flip game
-  # 1. bet_options<-c(1,2,3)
+  # 1. 
+  bet_options<-c(1,2,3)
+  bet<-sample(bet_options,1)
   #2. n<-2 #number of players
   #3 determine pot?  unnecessary
   #4 determine winner or loser
   #     person who flips calls h/t
-  #    rbinom(1,1,.5)
-  #   if call - bet =0, then caller wins
-  # if call - bet  != 0 then non caller wins
+  call_coin<-sample(c(1,0),1)
+  ifelse(call_coin==1,print("I call heads"),print("I call tails"))
+  
+  
+  #flip coin
+      flip<-rbinom(1,1,.5)
+      ifelse(flip==1,print("Heads"),print("Tails"))
+  if(call_coin - flip==0){
+    p1<-p1+bet
+    p2<-p2-bet
+    }else{
+       p1<-p1-bet
+       p2<-p2+bet}
+      
+  # if call - flip  != 0 then non caller wins
   # winner has their stash += bet
   # loser has tehir stash reduced -= bet
   
