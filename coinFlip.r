@@ -67,13 +67,18 @@ probability<-(c(rep(1/7,5),.2857143)) #probabilty that the dice is loaded for 6
    
   #flip game 
   #establish players, beginning money
+  n<-2  #number of players
+  
+  for (i in 1:n){print(i)}
+  
+  
+  
   p1<-10;p2<-10
   #player_stash <- 10
   # 1. 
   bet_options<-c(1,2,3)
   bet<-sample(bet_options,1)
-  #2. n<-2 #number of players
-  #3 determine pot?  unnecessary
+  
   #4 determine winner or loser
   #     person who flips calls h/t
   call_coin<-sample(c(1,0),1)
