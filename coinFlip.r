@@ -72,9 +72,26 @@ probability<-(c(rep(1/7,5),.2857143)) #probabilty that the dice is loaded for 6
       attr(value, "class") <- "player"
     value}
   
+  flip<-function(obj){
+      UseMethod("flip")
+  }
+  
+  flip.default<-function(obj,p=.5){
+    value<-rbinom(1,1,p)
+    value
+  }
+  
+  flip.player<-function(obj,p=.5){
+    value<-rbinom(1,1,p)
+    value
+  }
+  
   p1<-Player_class(10,'p1')
   p2<-Player_class(10,'p2')
   
+  flip(p1)  #this is a method, a function, called for player1 'p1' where rbinom produces a coint toss
+  #questions: how to modify probablity from default of .5?
+  # 
   
   n<-2  #number of players
   
