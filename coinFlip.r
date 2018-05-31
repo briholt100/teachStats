@@ -67,6 +67,15 @@ probability<-(c(rep(1/7,5),.2857143)) #probabilty that the dice is loaded for 6
    
   #flip game 
   #establish players, beginning money
+  Player_class<-function(s,p){
+    value<-list("stash"=s,"player_name"=p)
+      attr(value, "class") <- "player"
+    value}
+  
+  p1<-Player_class(10,'p1')
+  p2<-Player_class(10,'p2')
+  
+  
   n<-2  #number of players
   
   for (i in 1:n){print(i)}
