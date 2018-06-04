@@ -128,3 +128,53 @@ probability<-(c(rep(1/7,5),.2857143)) #probabilty that the dice is loaded for 6
   
   
   #sample from 
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+################
+      #object oriented Programming#
+library(R6)
+
+      Player<-R6Class("Player",
+                      public = list(
+                        name = NULL,
+                        stash = NULL,
+                        betting_style = NULL,
+                        initialize = function(name = NA, stash = NA, betting_style = 2) {
+                          self$name <- name
+                          self$stash <- stash
+                          self$betting_style<-betting_style
+                          self$greet()
+                        },
+                        set_stash = function(val) {
+                          self$stash <- val
+                        },
+                        greet = function() {
+                          cat(paste0("Hello, my name is ", self$name, ".\n"))
+                          cat(paste0("My stash of chips is ", self$stash, ".\n"))
+                          cat(paste0("My style of betting is ", self$betting_style, ".\n"))
+                        }
+                      )
+                      )
+p1<-Player$new("Brian",10,3)      
+p2<-Player$new("Julie",10)      
+      
+Betting_Game<-R6Class('Betting_Game',
+                            public = list(
+                              
+                            )
+        
+      )
+      
