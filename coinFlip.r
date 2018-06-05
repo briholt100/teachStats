@@ -165,20 +165,47 @@ library(R6)
                           cat(paste0("Hello, my name is ", self$name, ".\n"))
                           cat(paste0("My stash of chips is ", self$stash, ".\n"))
                           cat(paste0("My style of betting is ", self$betting_style, ".\n"))
-                        },
-                        call_coin = function(){
-                          call<-ifelse(sample(c(1,0),1)==1,'Heads!','Tails!')
-                          cat(paste0("I call ",call,"\n"))
-                      }
+                        }
+                        
                       )
       )
 p1<-Player$new("Brian",10,3)      
 p2<-Player$new("Julie",10)      
       
+# the following game should take 2 players and let them flip a coin after call heads/tails.  
+# Two mirror a real word 2 minute round of several bets, 
+#a minimum of 4 bets can occur and a limit of 15...
+#assumes one could only make 15 bets in 2 minutes,  and a min of 4 bets
 Betting_Game<-R6Class('Betting_Game',
-                            public = list(
-                              
-                            )
-        
-      )
-      
+                            
+                      public = list(
+                        name = NULL,
+                        outcome = NULL,
+                        
+                        initialize = function(name = NA, outcome = NA) {
+                          self$name <- name  #these functions will be called upon intitializing new objects
+                          self$outcome <- outcome
+                          self$greet()
+                        },
+                        greet = function() {
+                          cat(paste0("Hello, you are about to play a game",".\n"))
+                        },
+                        call_coin = function(){
+                          call<-ifelse(sample(c(1,0),1)==1,'Heads!','Tails!')
+                          cat(paste0("I call ",call,"\n"))
+                        },
+                        flip_coin = function(){
+                          #validate that bet of 'heads or tails' has occured
+                          if (call)
+                          flip<-rbinom(1,1,.5)
+                          ifelse(flip==1,flip<-"Heads",flip<-"Tails")
+                          flip
+                        }#,
+                        #make_bet<-function(player){
+                        #  call_coin()
+                          
+                      #  }
+                        )
+)
+                      
+game1<-Betting_Game$new("game 1")
