@@ -153,11 +153,11 @@ library(R6)
                         stash = NULL,
                         betting_style = NULL,
                         initialize = function(name = NA, stash = NA, betting_style = 2) {
-                          self$name <- name
+                          self$name <- name  #these functions will be called upon intitializing new objects
                           self$stash <- stash
                           self$betting_style<-betting_style
                           self$greet()
-                        },
+                          },
                         set_stash = function(val) {
                           self$stash <- val
                         },
@@ -165,9 +165,13 @@ library(R6)
                           cat(paste0("Hello, my name is ", self$name, ".\n"))
                           cat(paste0("My stash of chips is ", self$stash, ".\n"))
                           cat(paste0("My style of betting is ", self$betting_style, ".\n"))
-                        }
+                        },
+                        call_coin = function(){
+                          call<-ifelse(sample(c(1,0),1)==1,'Heads!','Tails!')
+                          cat(paste0("I call ",call,"\n"))
+                      }
                       )
-                      )
+      )
 p1<-Player$new("Brian",10,3)      
 p2<-Player$new("Julie",10)      
       
