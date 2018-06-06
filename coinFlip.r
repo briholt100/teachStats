@@ -165,7 +165,22 @@ library(R6)
                           cat(paste0("Hello, my name is ", self$name, ".\n"))
                           cat(paste0("My stash of chips is ", self$stash, ".\n"))
                           cat(paste0("My style of betting is ", self$betting_style, ".\n"))
-                        }
+                        },
+                        call_coin = function(){
+                          call<-ifelse(sample(c(1,0),1)==1,'Heads!','Tails!')
+                          cat(paste0("I call ",call,"\n"))
+                        },
+                        flip_coin = function(){
+                          #validate that bet of 'heads or tails' has occured
+                          #if (call)
+                            flip<-rbinom(1,1,.5)
+                          ifelse(flip==1,flip<-"Heads",flip<-"Tails")
+                          flip
+                        }#,
+                        #make_bet<-function(player){
+                        #  call_coin()
+                        
+                        #  }
                         
                       )
       )
@@ -188,23 +203,15 @@ Betting_Game<-R6Class('Betting_Game',
                           self$greet()
                         },
                         greet = function() {
-                          cat(paste0("Hello, you are about to play a game",".\n"))
+                          cat(paste0("Hello, would you like to play a game?","\n"))
                         },
-                        call_coin = function(){
-                          call<-ifelse(sample(c(1,0),1)==1,'Heads!','Tails!')
-                          cat(paste0("I call ",call,"\n"))
-                        },
-                        flip_coin = function(){
-                          #validate that bet of 'heads or tails' has occured
-                          if (call)
-                          flip<-rbinom(1,1,.5)
-                          ifelse(flip==1,flip<-"Heads",flip<-"Tails")
-                          flip
-                        }#,
-                        #make_bet<-function(player){
-                        #  call_coin()
+                        bet<-function(p1,p2){  #take 2 players
+                          player1<-p1
+                          player2<-p2
+                          makes_call<-sample(c(player1,player2),1)
+                          cat(makes_call[[1]]$name," gets to make the call")
                           
-                      #  }
+                        }
                         )
 )
                       
