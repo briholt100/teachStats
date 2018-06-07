@@ -196,23 +196,53 @@ Betting_Game<-R6Class('Betting_Game',
                       public = list(
                         name = NULL,
                         outcome = NULL,
+                        max_bet = NULL,
+                        bet_options = NULL,
                         
-                        initialize = function(name = NA, outcome = NA) {
+                        initialize = function(name = NA, outcome = NA, bet_options=c(1,2,3), max_bet=3) {
                           self$name <- name  #these functions will be called upon intitializing new objects
                           self$outcome <- outcome
+                          self$bet_options<-bet_options
+                          self$max_bet <- max_bet
                           self$greet()
                         },
                         greet = function() {
                           cat(paste0("Hello, would you like to play a game?","\n"))
                         },
-                        bet<-function(p1,p2){  #take 2 players
+                        bet=function(p1,p2){  #take 2 players
                           player1<-p1
                           player2<-p2
-                          makes_call<-sample(c(player1,player2),1)
-                          cat(makes_call[[1]]$name," gets to make the call")
+                          players<-c(p1,p2)
+                          makes_bet<-sample(players,1) #one idea would be to make a sorted list here.  then makes_bet[2] would flip
+                          
+                          flip_coin = function(){
+                            #validate that bet of 'heads or tails' has occured
+                            #if (call)
+                            flip<-rbinom(1,1,.5)
+                            ifelse(flip==1,flip<-"Heads",flip<-"Tails")
+                            flip
+                          } 
+                          
+                          
+                          
+                          flips_coin<-NULL
+                          if(makes_bet[[1]]$name == p1$name){flips_coin<-p2}else{flips_coin<-p1}
+                          flips_coin
+                          cat("this program chooses",makes_bet[[1]]$name," to make the bet.\n")
+                          bet<-sample(self$bet_options,1)  #look at aggressive style of player, use that to multiply by 1,then round down; check to see if bet is smaller than remainder of both player's stash
+                          cat(makes_bet[[1]]$name,"makes a bet of ",bet, ".\n")
+                          
+                          print("opposite person gets to flip")
+                          
+                          call_coin<-sample(c(1,0),1)  #1 =  heads
+                          if(call_coin==1){cat(makes_bet[[1]]$name," calls heads!")}
+                            else{cat(makes_bet[[1]]$name," calls tails!")}
+                          
                           
                         }
                         )
 )
                       
 game1<-Betting_Game$new("game 1")
+game1$bet(p1,p2)
+
