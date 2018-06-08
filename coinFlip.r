@@ -162,13 +162,13 @@ library(R6)
                           self$stash <- val
                         },
                         greet = function() {
-                          cat(paste0("Hello, my name is ", self$name, ".\n"))
-                          cat(paste0("My stash of chips is ", self$stash, ".\n"))
-                          cat(paste0("My style of betting is ", self$betting_style, ".\n"))
+                          cat(paste0("Hello, my name is ", self$name, ".\n\n\n"))
+                          cat(paste0("My stash of chips is ", self$stash, ".\n\n\n"))
+                          cat(paste0("My style of betting is ", self$betting_style, ".\n\n\n"))
                         },
                         call_coin = function(){
                           call<-ifelse(sample(c(1,0),1)==1,'Heads!','Tails!')
-                          cat(paste0("I call ",call,"\n"))
+                          cat(paste0("I call ",call,"\n\n\n"))
                         },
                         flip_coin = function(){
                           #validate that bet of 'heads or tails' has occured
@@ -207,7 +207,7 @@ Betting_Game<-R6Class('Betting_Game',
                           self$greet()
                         },
                         greet = function() {
-                          cat(paste0("Hello, would you like to play a game?","\n"))
+                          cat(paste0("Hello, would you like to play a game?","\n\n\n"))
                         },
                         bet=function(p1,p2){  #take 2 players
                           player1<-p1
@@ -220,24 +220,25 @@ Betting_Game<-R6Class('Betting_Game',
                             #if (call)
                             flip<-rbinom(1,1,.5)
                             ifelse(flip==1,flip<-"Heads",flip<-"Tails")
-                            flip
+                            cat("and the coin comes up ",flip,"!")
                           } 
                           
-                          
-                          
-                          flips_coin<-NULL
-                          if(makes_bet[[1]]$name == p1$name){flips_coin<-p2}else{flips_coin<-p1}
-                          flips_coin
-                          cat("this program chooses",makes_bet[[1]]$name," to make the bet.\n")
+                          who_flips<-NULL #Who gets to flip the coin?
+                          if(makes_bet[[1]]$name == p1$name){who_flips<-p2}else{who_flips<-p1}
+                          who_flips
+                          cat("this program chooses",makes_bet[[1]]$name," to make the bet.\n\n\n")
+                          cat ("and ",who_flips$name," will flip the coin.\n\n\n")
                           bet<-sample(self$bet_options,1)  #look at aggressive style of player, use that to multiply by 1,then round down; check to see if bet is smaller than remainder of both player's stash
-                          cat(makes_bet[[1]]$name,"makes a bet of ",bet, ".\n")
-                          
-                          print("opposite person gets to flip")
-                          
+                          cat(makes_bet[[1]]$name,"makes a bet of ",bet, ".\n\n\n")
                           call_coin<-sample(c(1,0),1)  #1 =  heads
-                          if(call_coin==1){cat(makes_bet[[1]]$name," calls heads!")}
-                            else{cat(makes_bet[[1]]$name," calls tails!")}
+                          cat (who_flips$name," is now flipping the coin.\n\n\n")
+                          if(call_coin==1){
+                            cat(makes_bet[[1]]$name," calls heads!\n\n\n")
+                            }
+                            else{cat(makes_bet[[1]]$name," calls tails!\n\n\n")}
+                          flip_coin()
                           
+                          #evaluate who wins to print winner and then the final score of stash.  
                           
                         }
                         )
