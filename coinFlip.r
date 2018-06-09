@@ -43,7 +43,7 @@ coin_flip<-function(type = .5, bias = .1){
 }
 mean(replicate(100,coin_flip()))
 
-#coin will be either unbiased or biased.  
+#coin will be either unbiased or biased.
 
 Bag_of_coins<- c(rep(.5,9),.6) #lists 9 fair coins, one biased coin at .6
 sample<-sample(Bag_of_coins,5,replace = F) #picks 5 coins randomly from bag
@@ -54,63 +54,63 @@ coin_flip(type=sample,bias=0)
 x<-c(1,2,3,4,5,6) # single dice
 probability<-(c(rep(1/7,5),.2857143)) #probabilty that the dice is loaded for 6
   hist(replicate(1000,sample(x,1,replace = T,prob=probability)))
-  
+
 
   x<-c(0,1) # single coin, 0=Tails
   probability<-c(.5,.5) #probabilty that the coin is fair = .5
   mean(replicate(1000,sample(x,1,replace = T,prob=probability)))
-  
+
 #simulation game
-  
-  
-  
-   
-  #flip game 
+
+
+
+
+  #flip game
   #establish players, beginning money
   Player_class<-function(s,p){
     value<-list("stash"=s,"player_name"=p)
       attr(value, "class") <- "player"
     value}
-  
+
   flip<-function(obj){
       UseMethod("flip")
   }
-  
+
   flip.default<-function(obj,p=.5){
     value<-rbinom(1,1,p)
     value
   }
-  
+
   flip.player<-function(obj,p=.5){
     value<-rbinom(1,1,p)
     value
   }
-  
+
   p1<-Player_class(10,'p1')
   p2<-Player_class(10,'p2')
-  
+
   flip(p1)  #this is a method, a function, called for player1 'p1' where rbinom produces a coint toss
   #questions: how to modify probablity from default of .5?
-  # 
-  
+  #
+
   n<-2  #number of players
-  
+
   for (i in 1:n){print(i)}
-  
-  
-  
+
+
+
   p1<-10;p2<-10
   #player_stash <- 10
-  # 1. 
+  # 1.
   bet_options<-c(1,2,3)
   bet<-sample(bet_options,1)
-  
+
   #4 determine winner or loser
   #     person who flips calls h/t
   call_coin<-sample(c(1,0),1)
   ifelse(call_coin==1,print("I call heads"),print("I call tails"))
-  
-  
+
+
   #flip coin
       flip<-rbinom(1,1,.5)
       ifelse(flip==1,print("Heads"),print("Tails"))
@@ -120,29 +120,29 @@ probability<-(c(rep(1/7,5),.2857143)) #probabilty that the dice is loaded for 6
     }else{
        p1<-p1-bet
        p2<-p2+bet}
-      
+
   # if call - flip  != 0 then non caller wins
   # winner has their stash += bet
   # loser has tehir stash reduced -= bet
-  
-  
-  
-  #sample from 
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
+
+
+
+  #sample from
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ################
       #object oriented Programming#
 library(R6)
@@ -179,24 +179,24 @@ library(R6)
                         }#,
                         #make_bet<-function(player){
                         #  call_coin()
-                        
+
                         #  }
-                        
+
                       )
       )
-p1<-Player$new("Brian",10,3)      
-p2<-Player$new("Julie",10)      
-      
-# the following game should take 2 players and let them flip a coin after call heads/tails.  
-# Two mirror a real word 2 minute round of several bets, 
+p1<-Player$new("Brian",10,3)
+p2<-Player$new("Julie",10)
+
+# the following game should take 2 players and let them flip a coin after call heads/tails.
+# Two mirror a real word 2 minute round of several bets,
 #a minimum of 4 bets can occur and a limit of 15...
 #assumes one could only make 15 bets in 2 minutes,  and a min of 4 bets
 Betting_Game<-R6Class('Betting_Game',
-                            
+
                       public = list(
                         name = NULL,
                         outcome = NULL,
-                        
+
                         initialize = function(name = NA, outcome = NA) {
                           self$name <- name  #these functions will be called upon intitializing new objects
                           self$outcome <- outcome
@@ -210,9 +210,10 @@ Betting_Game<-R6Class('Betting_Game',
                           player2<-p2
                           makes_call<-sample(c(player1,player2),1)
                           cat(makes_call[[1]]$name," gets to make the call")
-                          
+                          makes_call
+
                         }
                         )
 )
-                      
+
 game1<-Betting_Game$new("game 1")
