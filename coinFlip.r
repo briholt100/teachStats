@@ -128,3 +128,122 @@ probability<-(c(rep(1/7,5),.2857143)) #probabilty that the dice is loaded for 6
   
   
   #sample from 
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+################
+      #object oriented Programming#
+library(R6)
+
+      Player<-R6Class("Player",
+                      public = list(
+                        name = NULL,
+                        stash = NULL,
+                        betting_style = NULL,
+                        initialize = function(name = NA, stash = NA, betting_style = 2) {
+                          self$name <- name  #these functions will be called upon intitializing new objects
+                          self$stash <- stash
+                          self$betting_style<-betting_style
+                          self$greet()
+                          },
+                        set_stash = function(val) {
+                          self$stash <- val
+                        },
+                        greet = function() {
+                          cat(paste0("Hello, my name is ", self$name, ".\n\n\n"))
+                          cat(paste0("My stash of chips is ", self$stash, ".\n\n\n"))
+                          cat(paste0("My style of betting is ", self$betting_style, ".\n\n\n"))
+                        },
+                        call_coin = function(){
+                          call<-ifelse(sample(c(1,0),1)==1,'Heads!','Tails!')
+                          cat(paste0("I call ",call,"\n\n\n"))
+                        },
+                        flip_coin = function(){
+                          #validate that bet of 'heads or tails' has occured
+                          #if (call)
+                            flip<-rbinom(1,1,.5)
+                          ifelse(flip==1,flip<-"Heads",flip<-"Tails")
+                          flip
+                        }#,
+                        #make_bet<-function(player){
+                        #  call_coin()
+                        
+                        #  }
+                        
+                      )
+      )
+p1<-Player$new("Brian",10,3)      
+p2<-Player$new("Julie",10)      
+      
+# the following game should take 2 players and let them flip a coin after call heads/tails.  
+# Two mirror a real word 2 minute round of several bets, 
+#a minimum of 4 bets can occur and a limit of 15...
+#assumes one could only make 15 bets in 2 minutes,  and a min of 4 bets
+Betting_Game<-R6Class('Betting_Game',
+                            
+                      public = list(
+                        name = NULL,
+                        outcome = NULL,
+                        max_bet = NULL,
+                        bet_options = NULL,
+                        
+                        initialize = function(name = NA, outcome = NA, bet_options=c(1,2,3), max_bet=3) {
+                          self$name <- name  #these functions will be called upon intitializing new objects
+                          self$outcome <- outcome
+                          self$bet_options<-bet_options
+                          self$max_bet <- max_bet
+                          self$greet()
+                        },
+                        greet = function() {
+                          cat(paste0("Hello, would you like to play a game?","\n\n\n"))
+                        },
+                        bet=function(p1,p2){  #take 2 players
+                          player1<-p1
+                          player2<-p2
+                          players<-c(p1,p2)
+                          makes_bet<-sample(players,1) #one idea would be to make a sorted list here.  then makes_bet[2] would flip
+                          
+                          flip_coin = function(){
+                            #validate that bet of 'heads or tails' has occured
+                            #if (call)
+                            flip<-rbinom(1,1,.5)
+                            ifelse(flip==1,flip<-"Heads",flip<-"Tails")
+                            cat("and the coin comes up ",flip,"!")
+                          } 
+                          
+                          who_flips<-NULL #Who gets to flip the coin?
+                          if(makes_bet[[1]]$name == p1$name){who_flips<-p2}else{who_flips<-p1}
+                          who_flips
+                          cat("this program chooses",makes_bet[[1]]$name," to make the bet.\n\n\n")
+                          cat ("and ",who_flips$name," will flip the coin.\n\n\n")
+                          bet<-sample(self$bet_options,1)  #look at aggressive style of player, use that to multiply by 1,then round down; check to see if bet is smaller than remainder of both player's stash
+                          cat(makes_bet[[1]]$name,"makes a bet of ",bet, ".\n\n\n")
+                          call_coin<-sample(c(1,0),1)  #1 =  heads
+                          cat (who_flips$name," is now flipping the coin.\n\n\n")
+                          if(call_coin==1){
+                            cat(makes_bet[[1]]$name," calls heads!\n\n\n")
+                            }
+                            else{cat(makes_bet[[1]]$name," calls tails!\n\n\n")}
+                          flip_coin()
+                          
+                          #evaluate who wins to print winner and then the final score of stash.  
+                          
+                        }
+                        )
+)
+                      
+game1<-Betting_Game$new("game 1")
+game1$bet(p1,p2)
+
