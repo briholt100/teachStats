@@ -198,12 +198,17 @@ Betting_Game<-R6Class('Betting_Game',
                         outcome = NULL,
                         max_bet = NULL,
                         bet_options = NULL,
+                        rounds = NULL, #simple integer counting rounds
+                        bet_outcome = NULL,  #for a given bet, who won? output something like c(p1,+3,p2,-3)
+                        number_of_bets = NULL,
+                        outcome_tally = NULL, #at end of round wht is the standing? c(number of bets,p1$name,w,l,p1$stash,p2$name,w,l,p2$stash)
                         
-                        initialize = function(name = NA, outcome = NA, bet_options=c(1,2,3), max_bet=3) {
+                        initialize = function(name = NA, outcome = NA, bet_options=c(1,2,3), max_bet=3,rounds = 2) {
                           self$name <- name  #these functions will be called upon intitializing new objects
                           self$outcome <- outcome
                           self$bet_options<-bet_options
                           self$max_bet <- max_bet
+                          self$rounds <- rounds
                           self$greet()
                         },
                         greet = function() {
@@ -236,9 +241,15 @@ Betting_Game<-R6Class('Betting_Game',
                             cat(makes_bet[[1]]$name," calls heads!\n\n\n")
                             }
                             else{cat(makes_bet[[1]]$name," calls tails!\n\n\n")}
+                          
+                          #embed flip_coin into another function uses rounds to constrain the number of bets
+                          #and then tracks the outcomes of the bets
                           flip_coin()
                           
-                          #evaluate who wins to print winner and then the final score of stash.  
+                          #bet_outcome  
+                          #number_of_bets
+                          #outcome_tally 
+                                                    #evaluate who wins to print winner and then the final score of stash.  
                           
                         }
                         )
