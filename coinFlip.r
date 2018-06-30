@@ -220,12 +220,15 @@ Betting_Game<-R6Class('Betting_Game',
                           players<-c(p1,p2)
                           makes_bet<-sample(players,1) #one idea would be to make a sorted list here.  then makes_bet[2] would flip
                           
+                          flip_outcome<-NULL
                           flip_coin = function(){
                             #validate that bet of 'heads or tails' has occured
                             #if (call)
-                            flip<-rbinom(1,1,.5)
+                            flip_outcome<<-rbinom(1,1,.5)
+								flip<-flip_outcome
                             ifelse(flip==1,flip<-"Heads",flip<-"Tails")
                             cat("and the coin comes up ",flip,"!")
+								return (flip_outcome)
                           } 
                           
                           who_flips<-NULL #Who gets to flip the coin?
@@ -244,10 +247,12 @@ Betting_Game<-R6Class('Betting_Game',
                           
                           #embed flip_coin into another function uses rounds to constrain the number of bets
                           #and then tracks the outcomes of the bets
-                          flip_coin()
+                     #number_of_bets  
+					      flip_coin()
                           
-                          #bet_outcome  
-                          #number_of_bets
+						  #bet_outcome  
+						     ifelse(call_coin==flip_outcome , print('wins!'),print('lose'))
+						  
                           #outcome_tally 
                                                     #evaluate who wins to print winner and then the final score of stash.  
                           
