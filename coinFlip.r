@@ -265,8 +265,13 @@ game1$bet(p1,p2)
 
 
 
-make_winner_grid<-function(num_of_players){
-    #Need to track rounds
+make_winner_grid<-function(num_of_players, num_of_rounds){
+  #create a matrix?  or a data.frame?
+  #Need to track rounds
+  #Need to track players
+    #player count should be even at first
+    ifelse( num_of_players%%2 == 0,print('there are an even number of players'),print("uneven number of players"))
+
   #need to know number of flips
   #need to know who won, who lost
   #need to know number of winners
