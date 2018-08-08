@@ -265,8 +265,15 @@ game1$bet(p1,p2)
 
 
 
-make_winner_grid<-function(num_of_players, num_of_rounds){
+make_winner_grid<-function(num_of_players=2, num_of_rounds=1){
   #create a matrix?  or a data.frame?
+  flip_count<-sample(1:20,1)  #to simulate a number of flips in one minute
+  for(i in 1:flip_count) {
+    game1<-Betting_Game$new("game 1")
+    p1<-Player$new("Brian",10,3)
+    p2<-Player$new("Julie",10)
+    game1$bet(p1,p2)
+  }
   #Need to track rounds
   #Need to track players
     #player count should be even at first
@@ -281,3 +288,4 @@ make_winner_grid<-function(num_of_players, num_of_rounds){
 
 
 
+a<-make_winner_grid(2, num_of_rounds=1)
