@@ -1,4 +1,4 @@
-players<-list(10,10,10,10,10)
+players<-list(a=10,b=10,d=10,e=10)
 names(players)<-letters[c(1:2,4:6)]
 players
 sample(players,2)
