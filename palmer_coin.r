@@ -1,19 +1,13 @@
-players<-list(a=10,b=10,d=10,e=10)
-names(players)<-letters[c(1:2,4:6)]
-players
+player.list<-list(a=10,b=10,d=10,e=10) #'c' is a reserved function.
+playerplayers[[1]]
 sample(players,2)
 
-a<-10
-b<-10
-#c is a reserved function term
-d<-10
-e<-10
 count<-0
 flip.coin<-function(probability=.5){rbinom(1,1,prob=probability)} #simple random binomial choice of 1 or zero, 1 times
 bet<-function(bets=5){
     count<-0
     for(i in 1:bets){
-      if(a>0 & b >0){
+      if(a>0 & b>0){
         count<-count+1
         flip.outcome<-flip.coin()
         #print(paste('the flip number',i,'is',flip.outcome))
@@ -42,7 +36,7 @@ bet(40)
 
 
 game<-function(rounds=2,flips=10){
-  
+    #players<-sample(players,2)
   for(i in 1:rounds){
     if(a==0 | b==0){
       print('A player has joined the proletariat.')
@@ -59,7 +53,7 @@ game<-function(rounds=2,flips=10){
 
 a<-5
 b<-15
-game(6,10)
+game(rounds=6,flips=10)
 
   #only works for a few players.Need to generalize. Change the above 
 #"a<-a+1,a<-a-1" "player<-player+1,player<-player-1" and the other to opponent?  
@@ -71,3 +65,37 @@ players_n_coins[[1]]
 
 
 https://bims.fun/r-lists.html#indexing_lists
+
+
+
+gamers<-sample(player.list,2)
+
+bet<-function(bets=5,gamers=gamers){
+  count<-0
+  for(i in 1:bets){
+    if(gamers[1]>0 & gamers[2]>0){
+      count<-count+1
+      flip.outcome<-flip.coin()
+      #print(paste('the flip number',i,'is',flip.outcome))
+      ifelse(flip.outcome==1,gamers[[1]]<<-gamers[[1]]+1,gamers[[1]]<<-gamers[[1]]-1) #if heads, player a adds 1, if not, loses 1
+      ifelse(flip.outcome==1,gamers[[2]]<<-gamers[[2]]-1,gamers[[2]]<<-gamers[[2]]+1) #if heads player b loses 1, so on
+      
+    }
+    else{
+      print('a player has no more coins to bet; game over')
+      #        print(paste("player \'a\' now has",a,"coins")) #final tally
+      #       print(paste("player \'b\' now has",b,"coins")) #final tally
+      count<<-count
+      #        print(paste ("there were",count,"coin flips"))
+      #       print(paste("player \'a\' now has",a,"coins"))
+      #      print(paste("player \'b\' now has",b,"coins"))
+      return(count)
+    }
+    
+  }      
+  #print(paste("player \'a\' now has",a,"coins")) #final tally
+  #print(paste("player \'b\' now has",b,"coins")) #final tally
+  #print(paste ("there were",count,"coin flips"))
+}
+
+bet(1)
