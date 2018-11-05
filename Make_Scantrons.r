@@ -44,3 +44,4 @@ set.seed(403)
 ex1 <- exams2nops(myexam, n = 2,
                   dir = "nops_pdf", name = "demo", date = "2018-02-23",
                   points = c(1, 1, 1, 2, 2, 3), showpoints = TRUE)
+>>>>>>> 5ff64ee4bb6805388b35e44984a72b0d0e387c86
