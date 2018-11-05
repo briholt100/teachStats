@@ -1,7 +1,13 @@
-player.list<-list(a=10,b=10,d=10,e=10) #'c' is a reserved function.
-playerplayers[[1]]
-sample(players,2)
-
+create_players<-function(players=4){
+  player.names<-letters[1:players]
+  player.list<-list()
+  for(i in 1:players){
+    player.list[i]<-list(list(coin=10,round=0))
+  }
+  names(player.list)<-player.names
+  return(player.list)
+}
+player.list<-create_players(30)
 count<-0
 flip.coin<-function(probability=.5){rbinom(1,1,prob=probability)} #simple random binomial choice of 1 or zero, 1 times
 bet<-function(bets=5){
@@ -99,3 +105,30 @@ bet<-function(bets=5,gamers=gamers){
 }
 
 bet(1)
+
+player.list<-list(a=10,b=11, d=12, e=13)
+player.list[]
+#player.count<-length(player.list)
+bet<-function(flips=2){
+  player.count<-length(player.list)
+  players<-sample(1:player.count,2,replace=F)
+  print(paste("there are this number if players",player.count))
+  print(players)
+  print("the above shoukd be two numbers bw 1&4")
+  print(paste("there shkukd be this many flips",flips))
+  
+  for (i in 1:flips){
+    #print(i)
+    player.list[players[1]][[1]]<<-player.list[players[1]][[1]] +1
+  }
+}
+
+bet(15)
+player.list#[2][[1]]+1
+
+bet(15)
+bet(15)
+bet(15)
+bet(15)
+player.list#[2][[1]]+1
+
