@@ -7,18 +7,19 @@ create_players<-function(players=4){
   names(player.list)<-player.names
   return(player.list)
 }
-player.list<-create_players(30)
+player.list<-create_players(22)
 count<-0
 flip.coin<-function(probability=.5){rbinom(1,1,prob=probability)} #simple random binomial choice of 1 or zero, 1 times
-bet<-function(bets=5){
+bet<-function(bets=5,player1,player2){
     count<-0
     for(i in 1:bets){
-      if(a>0 & b>0){
+      if(player1$coin>0 & player2$coin>0){
         count<-count+1
         flip.outcome<-flip.coin()
         #print(paste('the flip number',i,'is',flip.outcome))
-        ifelse(flip.outcome==1,a<<-a+1,a<<-a-1) #if heads, player a adds 1, if not, loses 1
-        ifelse(flip.outcome==1,b<<-b-1,b<<-b+1) #if heads player b loses 1, so on
+        ifelse(flip.outcome==1,player1$coin<-player1$coin+1,player1$coin<-player1$coin-1) #if heads, player a adds 1, if not, loses 1
+        ifelse(flip.outcome==1,player2$coin<-player2$coin-1,player2$coin<-player2$coin+1) #if heads player b loses 1, so on
+        
 
       }
       else{
@@ -31,15 +32,19 @@ bet<-function(bets=5){
   #      print(paste("player \'b\' now has",b,"coins"))
         return(count)
       }
-    
+      print(player2$coin)
+      
   }      
+    print(player2)
   #print(paste("player \'a\' now has",a,"coins")) #final tally
   #print(paste("player \'b\' now has",b,"coins")) #final tally
   #print(paste ("there were",count,"coin flips"))
 }
 
-bet(40)
-
+bet(40,player1=player.list$a,player2=player.list$b)
+#this above works as far as making an interal list item.  But my problems:
+#1 how to keep track of the actual player name in the function.  If I feed it player$a how do I backtrack to player a
+#2 must then right a search function to crawl the player list looking for the right player to add coins to
 
 game<-function(rounds=2,flips=10){
     #players<-sample(players,2)
