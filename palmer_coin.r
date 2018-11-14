@@ -7,7 +7,15 @@ create_players<-function(players=4){
   names(player.list)<-player.names
   return(player.list)
 }
-player.list<-create_players(22)
+player.list<-create_players(26)
+
+n<-5
+samp<-sample(letters,n)
+for (i in 1:n){
+  print(player.list[samp[i]])
+}
+samp
+
 count<-0
 flip.coin<-function(probability=.5){rbinom(1,1,prob=probability)} #simple random binomial choice of 1 or zero, 1 times
 bet<-function(bets=5,player1,player2){
