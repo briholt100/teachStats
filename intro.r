@@ -63,19 +63,16 @@ dfSal %>%
 ##code 1.6
 #generate small set of data
 make_sample<-function(n=5,range=1:10,mean,st.dev){
-  small.sample<-sample(range,n)
+  small.sample<-sample(range,n,replace = T)
   return(small.sample)
 }
-small.sample<-make_sample()
-
-n<-length(small.sample)
-small.sum<-sum(small.sample)
-
-small.sum/n
-
-mean(small.sample)
-
-sort(small.sample)
-median(small.sample)
+set.seed(1)
+small.sample<-make_sample()  #make a sample of 5 between 1:10
+n<-length(small.sample)  #confirm n
+small.sum<-sum(small.sample) #calc sum
+small.sum/n   #calc mean
+mean(small.sample) #confirm mean
+sort(small.sample) #rank the items
+median(small.sample) # confirm median
 
 
