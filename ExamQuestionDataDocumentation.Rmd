@@ -1,0 +1,87 @@
+---
+title: "Exam Question Data Documentatino"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+###  SQL database documentation for simple database tracking exam question use.
+
+| Code  | meta | Desc  |
+| --- |:------:| ------------------:|
+| Question|Data Type:    text|The question itself:
+| | Size:    200|
+| | Allow Null:    Yes|
+|  Question_title|Data Type:    text| abreviated form of question:
+| | Size:    200|
+| | Allow Null:    Yes|
+| Question_domain|Data Type:    text| basic area (bio, learning, cog, etc):
+| | Size:    200|
+| | Allow Null:    Yes|
+| Answer|Data Type:    text| the correct answer:
+| | Size:    200|
+| | Allow Null:    No|
+| Alt_answer1|Data Type:    text| distractor answers:
+| | Size:    200|
+| | Allow Null:    No|
+| Alt_answer2|Data Type:    text| distractor answers:
+| | Size:    200|
+| | Allow Null:    No|
+| Alt_answer3|Data Type:    text| distractor answers:
+| | Size:    200|
+| | Allow Null:    Yes|
+| Alt_answer4|Data Type:    text| distractor answers:
+| | Size:    200|
+| | Allow Null:    Yes|
+| Alt_answer5|Data Type:    text| distractor answers:
+| | Size:    200|
+| | Allow Null:    Yes|
+| Last_used|Data Type:    date| indicator when question was last used:
+| | Size:    YYYY-MM-DD|
+| | Allow Null:    Yes|
+| Difficulty|Data Type:    integer  | indicatorof difficulty, 1= easy 2 =hard:
+| | Size:    3|
+| | Allow Null:    Yes|
+| Class_perform |Data Type:    number  | ratio of students correctly getting correct; students answering correct / num of students:
+| | Size:    long ratio|
+| | Allow Null:    Yes|
+
+CREATE TABLE ExamQuestions (
+ Question TEXT PRIMARY KEY,
+ Question_Title TEXT NOT NULL,
+ Question_domain TEXT NOT NULL,
+ Answer TEXT NOT NULL,
+ Alt_answer1 TEXT NOT NULL,
+ Alt_answer2 TEXT NOT NULL,
+ Alt_answer3 TEXT NOT NULL,
+ Alt_answer4 TEXT,
+ Alt_answer5 TEXT,
+ Last_used DATE,
+ Difficulty INTEGER,
+ Class_perform NUMBER
+);
+
+INSERT INTO ExamQuestions (
+Question,
+Question_Title,
+ Question_domain,
+ Answer,
+ Alt_answer1,
+ Alt_answer2,
+ Alt_answer3,
+ Last_used,
+ Difficulty,
+ Class_perform
+ )
+VALUES
+ ("A major advantage of case studies is ________. "),
+ ("detailed information"),
+ ("generalizability "),
+ ("large sample size "),
+ ("quick data collection "),
+ ("2019/01/14"),
+ ("1"),
+ ("13/15")
+ ;
