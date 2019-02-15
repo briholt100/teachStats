@@ -10,8 +10,8 @@ output: pdf_document
 ```
 Question
 ========
-2.	Who called the stages of development psychosexual stages?
 
+2.	Who called the stages of development psychosexual stages?
 
 A. Erik Erikson
 B. Jean Piaget
