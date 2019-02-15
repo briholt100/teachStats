@@ -7,8 +7,8 @@ flip <-function(b,x=.5){
          function(b) mean(rbinom(b,1,x)))  #rbinom is a base R function that randonly generates values based on the binomial forumla
 }
 
-plot(log10(b),flip(b,.5),type='l',col='blue',ylim = c(.3,.8))  #plot will create a graph with log10(b) as the x axes and then pots the result of the flip() function above
-lines(log10(b),flip(b,.55),type='l',col='red')  #lines is like plot, but instead of creating a new plot, it overlays over top of the current plot
+plot(log10(b),flip(b,.5),type='l',col='blue',ylim = c(0,1.2))  #plot will create a graph with log10(b) as the x axes and then pots the result of the flip() function above
+lines(log10(b),flip(b,.6),type='l',col='red')  #lines is like plot, but instead of creating a new plot, it overlays over top of the current plot
 
 flip_list<-flip(b,.5)
 
