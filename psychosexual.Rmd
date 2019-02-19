@@ -2,7 +2,11 @@
 title: "Test Scantron"
 author: "Brian Holt"
 date: "February 27, 2018"
-output: pdf_document
+output:
+  pdf_document:
+    number_sections: yes
+  word_document: default
+  html_document: default
 ---
 
 ```{r data generation, echo = FALSE, results = "hide"}
