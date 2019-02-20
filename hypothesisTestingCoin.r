@@ -1,13 +1,13 @@
 library(dplyr)
 exp<-list(5,5)
-obs<-list(3,7)
+obs<-list(2,8)
 out<-as.integer()
 for (i in 1:length(obs)){
   
-  out[i]<-(as.numeric(obs[i])-as.numeric(exp[i]))^2
-  
+  out[i]<-(as.numeric(obs[i])-as.numeric(exp[i]))^2  #squaring the differences
+  #print(out[i])
 }
-thresh<-sum(out)
+thresh<-sum(out)  #sum of squares
 
 
 simulations<-10000
@@ -37,4 +37,4 @@ pvalue<-length(tally$heads[tally$heads<=3])/nrow(tally)
 plot(density(tally$average))
 abline(v=pvalue,col='blue')
 
-
+#must count how many breech threshold
