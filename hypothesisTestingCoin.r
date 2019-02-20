@@ -1,6 +1,8 @@
 library(dplyr)
 exp<-list(5,5)
 obs<-list(2,8)
+dbinom(2,10,.5)  #this analytically calculates the probability
+mean(rbinom(1000,10,.3)==2)
 out<-as.integer()
 for (i in 1:length(obs)){
   
@@ -34,7 +36,7 @@ pvalue<-length(tally$heads[tally$heads<=3])/nrow(tally)
 
 
 
-plot(density(tally$average))
+hist(tally$average)
 abline(v=pvalue,col='blue')
 
 #must count how many breech threshold
