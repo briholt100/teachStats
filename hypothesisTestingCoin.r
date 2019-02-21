@@ -14,7 +14,7 @@ thresh<-sum(out)  #sum of squares
 
 simulations<-10000
 trial_length<-10
-tally<-matrix(ncol=3,nrow=2)
+tally<-matrix(ncol=3,nrow=simulations)
 tally<-as.data.frame(tally)
 names(tally)<-c('heads','tails','average')
 for(i in 1:simulations){
@@ -32,8 +32,8 @@ for(i in 1:simulations){
 
 tail(tally)
 pvalue<-length(tally$heads[tally$heads<=3])/nrow(tally)
-
-
+pvalue
+pbinom(3,10,.5)
 
 
 hist(tally$average)
