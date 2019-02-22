@@ -34,12 +34,13 @@ simulate_coin_toss<-function(sims=5,sample_size=3,trial_length=10,heads=3){
   return(pvalue_df)
 }
 
-pvalue_vec<-simulate_coin_toss(sims=1000,sample_size=100,trial_length=10,heads=1)
+pvalue_vec<-simulate_coin_toss(sims=1000,sample_size=100,trial_length=10,heads=3)
 mean(pvalue_vec) #calculates average cumulative probablity of a given number of heads/trials
 hist(pvalue_vec)
 abline(v=mean(pvalue_vec),col='blue')
 abline(v=pbinom(5,10,.5),col='red',lty=3) #plots verticle line of exact cumulative  prob of heads/trials
 
+?binom.test
 
 
 library(dplyr)
