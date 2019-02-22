@@ -34,7 +34,7 @@ simulate_coin_toss<-function(sims=5,sample_size=3,trial_length=10,heads=3){
   return(pvalue_df)
 }
 
-pvalue_vec<-simulate_coin_toss(sims=1000,sample_size=100,trial_length=10,heads=5)
+pvalue_vec<-simulate_coin_toss(sims=1000,sample_size=100,trial_length=10,heads=1)
 mean(pvalue_vec) #calculates average cumulative probablity of a given number of heads/trials
 hist(pvalue_vec)
 abline(v=mean(pvalue_vec),col='blue')
