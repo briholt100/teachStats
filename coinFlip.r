@@ -8,7 +8,7 @@ flip <-function(b,x=.5){
 }
 
 plot(log10(b),flip(b,.5),type='l',col='blue',ylim = c(0,1.2))  #plot will create a graph with log10(b) as the x axes and then pots the result of the flip() function above
-lines(log10(b),flip(b,.6),type='l',col='red')  #lines is like plot, but instead of creating a new plot, it overlays over top of the current plot
+lines(log10(b),flip(b,.8),type='l',col='green')  #lines is like plot, but instead of creating a new plot, it overlays over top of the current plot
 
 flip_list<-flip(b,.5)
 
