@@ -1,4 +1,6 @@
+
 e1<-readClipboard()
+#e1<-readLines(con=file("/home/brian/ch5Openstax.txt"))
 e1[1:6]
 str(e1)
 e1<-e1[grep('(^$)',e1,invert=T)] #looks for full lines
@@ -17,6 +19,9 @@ e1<-gsub("^Difficul.*$","",e1)
 #change categories into gift format  $CATEGORY: mycategory
 #e1<-gsub('Difficulty','\\$CATEGORY',e1,ignore.case=F)
 #table(grep('CATEGORY',e1,ignore.case=F,value=T))
+#e1<-gsub('\\$CAT.*$','',e1)
+
+e1<-gsub('(CATEGORY: )(.*$)','\\1\\2/Chapter 5',e1)
 
 # only pull answers for in class test. to find answer 'a', change range in brackets
 e1[grep('^[a-e]',e1,ignore.case = T)]
@@ -45,6 +50,7 @@ e1<-gsub("(^[a-e]\\. )","~\\1",e1,ignore.case=T) #
 ##this pulls out just questinos when invert ==T
 q<-e1[grep('\\$|=|^~[a-e]',e1,ignore.case=T,invert=T)]
 writeClipboard(e1)
+writeLines(e1,file("/home/brian/chapter_5-Openstax.txt"))
 grouping<-1:6
 
 
