@@ -1,44 +1,62 @@
 #the following function creates a df of coin tosses of various trials
-coin_toss<-function(sample_size=3,trial_length=10){
+coin_toss<-function(sample_size=3,trial_length=10, p=.5){
   
-  tally_df<-matrix(ncol=3,nrow=sample_size)
+  tally_df<-matrix(ncol=4,nrow=sample_size)
   tally_df<-as.data.frame(tally_df)
-  names(tally_df)<-c('heads','tails','average')
+  names(tally_df)<-c('heads','tails','difference','average')
   
     for(i in 1:sample_size){
-      trial<-rbinom(trial_length,1,.5)
+      #trial<-rbinom(trial_length,1,p)
+      trial<-sample(0:1,10,.5)
       #print(trial)
       average<-mean(trial)
       h<-sum(trial)
       t<-trial_length-h
+      diff<-(h-t)
       #print(i)
       #print(h)
       #print(t)
-      tally_df[i,]<-(cbind(h,t,average))
+      tally_df[i,]<-(cbind(h,t,diff,average))
     }
   return(tally_df)  
 }
 
-tally_df<-coin_toss(100,10)
-
+tally_df<-coin_toss(100,100,.5)
+tally_df
+head(tally_df)
+##assuming a probability that the coin is fair, (.5), here is the average difference of all those coin differences from that average.
+mean(tally_df[,3])
+plot(density(tally_df[,3]))
+lines(density(tally_df[,3]),col='blue')
 #using coin_toss(), simulate many samples and create a vector of probabilities of 'heads'=3
-simulate_coin_toss<-function(sims=5,sample_size=3,trial_length=10,heads=3){
+simulate_coin_toss<-function(sims=5,
+                             sample_size=3,
+                             trial_length=10,
+                             heads=3,
+                             p=.5){
   
   #pvalue_df<-vector(length=sims)
   pvalue_df<-as.data.frame(matrix(nrow=sims,ncol=2))
   names(pvalue_df)<-c('pvalue','success_count')
   for (j in 1:sims){ 
-    tally_df<-coin_toss(sample_size = sample_size,trial_length = trial_length)
+    tally_df<-coin_toss(sample_size = sample_size,trial_length = trial_length, p)
+    print(tally_df[j,])
+    cat(paste('\r\nnum of rows in tally_df: ',nrow(tally_df)," \r\n"))
+    cat(paste('\r\nnum of times we found ',
+              tally_df$heads[tally_df$heads<=heads],
+              " heads or fewer \r\n\r\n"))
     pvalue_df[j,1]<-length(tally_df$heads[tally_df$heads<=heads])/nrow(tally_df)
     pvalue_df[j,2]<-length(tally_df$heads[tally_df$heads<=heads])
 
+    print(pvalue_df[j,1:2])
   }
   return(pvalue_df)
 }
 heads=3
-pvalue_df<-simulate_coin_toss(sims=1000,sample_size=30,trial_length=10,heads=heads)
+simulate_coin_toss(sims=2,sample_size=1,trial_length=10,heads=heads)
+pvalue_df<-simulate_coin_toss(sims=100,sample_size=100,trial_length=10,heads=heads)
 mean(pvalue_df$pvalue) #calculates average cumulative probablity of a given number of heads/trials
-hist(pvalue_df$pvalue)
+hist(pvalue_df$pvalue,freq=F)
 abline(v=mean(pvalue_df$pvalue),col='blue')
 abline(v=pbinom(heads,10,.5),col='red',lty=3) #plots verticle line of exact cumulative  prob of heads/trials
 
