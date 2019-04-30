@@ -38,6 +38,7 @@ simulate_coin_toss<-function(sims=5,
   #pvalue_df<-vector(length=sims)
   pvalue_df<-as.data.frame(matrix(nrow=sims,ncol=2))
   names(pvalue_df)<-c('pvalue','success_count')
+  hist(rbinom(10,10,.5),breaks=20,main='frequency of heads\n in 10 sims of 10\n coin tosses')
   for (j in 1:sims){ 
     tally_df<-coin_toss(sample_size = sample_size,trial_length = trial_length, p)
     print(tally_df[j,])
@@ -47,15 +48,16 @@ simulate_coin_toss<-function(sims=5,
               " heads or fewer \r\n\r\n"))
     pvalue_df[j,1]<-length(tally_df$heads[tally_df$heads<=heads])/nrow(tally_df)
     pvalue_df[j,2]<-length(tally_df$heads[tally_df$heads<=heads])
-
+    abline(v=pvalue_df[j,2],col='blue')
     print(pvalue_df[j,1:2])
   }
   return(pvalue_df)
 }
 heads=3
 simulate_coin_toss(sims=2,sample_size=1,trial_length=10,heads=heads)
-pvalue_df<-simulate_coin_toss(sims=100,sample_size=100,trial_length=10,heads=heads)
+pvalue_df<-simulate_coin_toss(sims=1000,sample_size=10,trial_length=10,heads=heads)
 mean(pvalue_df$pvalue) #calculates average cumulative probablity of a given number of heads/trials
+sd(pvalue_df$pvalue) 
 hist(pvalue_df$pvalue,freq=F)
 abline(v=mean(pvalue_df$pvalue),col='blue')
 abline(v=pbinom(heads,10,.5),col='red',lty=3) #plots verticle line of exact cumulative  prob of heads/trials
