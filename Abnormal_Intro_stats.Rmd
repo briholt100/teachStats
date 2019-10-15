@@ -1,0 +1,194 @@
+---
+title: "Abnormal stats"
+author: "Brian Holt"
+date: "10/15/2019"
+output:
+  html_document:
+    TOC: yes
+    df_print: paged
+  pdf_document: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(tidyr)
+library(dplyr)
+#library(ggplot)
+```
+
+## key terms
+
+      independent variable aka 'x' variable
+      
+      dependent variable, outcome variable, aka 'y' variable
+      
+      p-value--if the null hypothesis is true, the p-value is the probability that the effect, or one larger, is found.  It's saying that when you find a difference between groups, that the chance of finding that difference is the p-value when the null is true.  The null says there should be no difference.  ## Intro to stats for abnormal psych students
+
+## Intro
+
+Big idea about research is that it is incredibly rare to perform one study/experiment and to have it change the known literature.  Science is 99.99% incremental.
+
+So, when you learn about a topic via reading journal articles (experiments) be humble about what you find.
+
+Also, remember the 3 main parts of John Stuart Mills thoughts on Cause and effect.  To establish that you need:
+
+1. Covariance between variables (correlation)
+
+2. Temporal precedence (the cause has to come before the effect
+
+3. all other explanations must be ruled out.
+
+The last one, 3, is the hard part.  
+
+
+This is a skeletal outline of most intro stat books:
+
+    What are numbers
+    How to graph
+    Probability
+    Probability Distribution broadly
+    Probability Distributions, specifically the Normal, central limit theorem
+    Z-scores
+    T-tests
+    Correlations
+    ANOVA
+    Linear Regression
+    Chi-Square
+    Effect Sizes
+
+In abnormal psychology you see a lot of linear regressions.  You also see a Effect Sizes.
+
+
+To have an introductory understanding of regression, you should understand probability and Probability Distributions. 
+
+
+
+So, let’s jump into probability distributions by first looking at some graphs.
+
+
+## Graphing with a histogram
+
+
+Histograms are useful for seeing how small sets of data "look".  It often is useful to do this for seeing where your data exists. Imagine we wanted to sample how tall people are.  Let us say I can sample 100 people, randomly, from Seattle.  Here they are listed in inches
+
+```{r height data}
+h <- round(rnorm(100,mean=66, sd=1),1)
+print(h)
+```
+
+We can see this data more easily if we graph it.  There are many ways to, but htis is a class way: The Histogram
+
+```{r histogram}
+
+hist(h,xlab = 'Height',main = 'histogram of heights in Seattle')
+
+```
+
+What you should see here is that the vertical 'y' axis is a frequency, a count, while the 'x' axis is the range of scores.  So, from 64 to 64.5 inches tall, there appears to be about `r length(h[h>=64&h<=64.5])` people.  If you look at our original data, you should see this is true:
+
+```{r sort data,echo=F}
+sort(h)
+print("and here is the data pulled out so you aren't overtaxing your eyes")
+sort(h[h>=64&h<=64.5])
+```
+
+But what I want you to really see is the shape of this histogram.  It is beginning to look like a bell curve, the classic normal distribution.  If we could sample a bit larger number of people, say 200, you would a shape more close to this normal curve:
+
+```{r More data for histogram,echo=F}
+h.1 <- rnorm(200, mean=66)
+hist(h.1,xlab = 'Height',main = 'histogram of 200 heights in Seattle')
+
+```
+
+And what about 1000 people? 
+
+```{r  1000 data for histogram,echo=F}
+h.1000 <- rnorm(1000, mean=66)
+par(mfrow=c(1,2))
+hist(h.1000,xlab = 'Height',main = 'histogram of 1000 heights in Seattle')
+plot(density(h.1000),xlab="heights",main="Distribution")
+```
+
+I hope you see where this is going.  Because then the following makes some sense:
+
+The area under the curve on the right is the probability of those values on the x axis occurring.
+
+For example, look at the histogram of 100 people.  We can use the the number of people between 64 and 64.5 inches.  In this case there are `r length(h[h>=64&h<=64.5])`, and since there are 100 people, you can do the quick calculation that `r length(h[h>=64&h<=64.5])` out of 100 is `r length(h[h>=64&h<=64.5])/100`.  If you were to ask the question "what is the chance that someone is between 64 and 64.5 inches tall, you would say about `r length(h[h>=64&h<=64.5])`%
+
+The point here is that if you know something about a sample's distribution, you can start making some guesses about the larger population.  And, this is the cornerstone for what a p-value is.  But we'll come back to that. 
+
+## Big leap to correlations
+
+I'm going to load a data set that has 231 cases, people, where they have given data about their personality.  I've no idea about who these people are, though I imagine there is some information online.  
+```{r load data, echo=T}
+datafilename <- "http://personality-project.org/r/datasets/maps.mixx.epi.bfi.data"
+person.data  <- read.table(datafilename,header=TRUE)  #read the data file
+str(person.data)
+```
+
+We've talked about neuroticism in the context of the Big 5 OCEAN but not of the PEN, a different trait theory about personality.  The N in PEN stands for neuroticism, and so let's learn about the correlation.  
+
+First, it helps to plot the data.  On the x-axis we'll put the big 5 Neuroticism and the y-axis will have the PEN.
+
+```{r plot neuroticisms, echo=F}
+plot(person.data$bfneur,person.data$epiNeur)
+```
+
+This plot shows the data leaning, yes?  This is visually describing a "positive" correlation:  when one variable moves, the other variable moves **in the same direction**.  If they moved in opposite directions, one goes, up the other down, you'd have a negative correlation.  If the two variables were unrelated, then the correlation would look much like a big scatter of data points with no obvious trend.  
+
+A correlation is a numerical representation of these trends.  It exists as a number between -1 --- 0 --- +1. For this data set, the correlation happens to be `r round(cor(person.data$bfneur,person.data$epiNeur),2)`
+
+You can also visualize a correlation as the best fitting line of this data.  And this is *basically* what linear regression is.
+
+## Linear Regression
+
+You may remember in past math courses something about the best fitting line.  You more likely remember one of the formulas for a line is y=mx+b.
+
+Well, a regression is sort of like the variable 'm'.  Let's plot this line over the data.
+
+
+```{r linear regression line on data}
+Neurot.lm.1  <- lm(data=person.data,epiNeur~bfneur)
+
+plot(person.data$bfneur,person.data$epiNeur)
+abline(Neurot.lm.1)
+```
+
+You should notice the line doesn't fit over every single data point.  What it is trying to do is minimize the overall difference scores from the line to each of the data points.  You can do this by hand with small data sets and when you are trying to do just 2 variables. More variables requires linear algebra, and the more variables you add, the time it takes to solve by hand is exponential. Like if you try to do 4 variables it will take you weeks.  
+
+Yay for computers.  Cuz the fast.  
+
+What this line represents is the best line where the difference between data points and this line is the smallest.  
+
+It is implying a causal relationship, or at least that one variable 'X' impacts the other variable 'Y'.  Maybe it's causal, maybe there are other variables that are doing the 'causing'.
+
+When you see a paper cite a linear regression the output will look something like this:
+
+```{r linear regression output,echo=T}
+summary(Neurot.lm.1)
+```
+
+The key number here is the "beta" Estimate for bfneur, 0.1318, which basically says that as x moves one unit, y will move .1318 units up.  Seems small, but in this case it is significant.  Imagine a scenario when you took the same variable and plotted it against itself:
+
+```{r plot bfneur to itself,echo=T}
+plot(person.data$bfneur,person.data$bfneur)
+```
+
+It's a straight line.  Now let's add a little variation and run a regression to see how big the Beta coefficient gets.
+
+```{r linear regress on bfneur, echo=T}
+bfneur.noise <- person.data$bfneur+rnorm(length(person.data$bfneur),.1,3)
+plot(person.data$bfneur,bfneur.noise,ylab='noise added to bfneur')
+
+summary(lm(bfneur.noise~person.data$bfneur))
+```
+The summary output shows nearly a 1.0 for the beta coefficient. 1 move for every move of 1.  Beta coefficients can be larger than 1 whereas correlations must be between -1 and +1.  
+
+To see how correlations are related to the beta coefficient, and if you understand what a standard deviation is, here is the conversion, which only works for an x-y pairing.  Multiple X's won't work this way. 
+```{r create beta coefficient from cor,echo=TRUE}
+cor.bfneur.epin <- cor(person.data$epiNeur,person.data$bfneur)
+cor.bfneur.epin*sd(person.data$epiNeur)/sd(person.data$bfneur)
+```
+
+
+So, a linear regression is a process to find a best fitting line over data.  You can have many variables when doing this and such a process will show you which variables have more or less influence over the outcome variable.  
