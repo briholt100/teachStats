@@ -21,7 +21,7 @@ coin_toss<-function(sample_size=3,trial_length=10, p=.5){
   return(tally_df)  
 }
 
-tally_df<-coin_toss(100,100,.5)
+tally_df<-coin_toss(sample_size=10,trial_length=10,p=.5)
 tally_df
 head(tally_df)
 ##assuming a probability that the coin is fair, (.5), here is the average difference of all those coin differences from that average.
@@ -55,7 +55,7 @@ simulate_coin_toss<-function(sims=5,
 }
 heads=3
 simulate_coin_toss(sims=2,sample_size=1,trial_length=10,heads=heads)
-pvalue_df<-simulate_coin_toss(sims=1000,sample_size=10,trial_length=10,heads=heads)
+pvalue_df<-simulate_coin_toss(sims=100,sample_size=10,trial_length=10,heads=heads)
 mean(pvalue_df$pvalue) #calculates average cumulative probablity of a given number of heads/trials
 sd(pvalue_df$pvalue) 
 hist(pvalue_df$pvalue,freq=F)
