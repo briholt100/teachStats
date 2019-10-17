@@ -3,11 +3,14 @@ title: "Abnormal stats"
 author: "Brian Holt"
 date: "10/15/2019"
 output:
-  html_document:
-    toc: true
-    toc_float: true
-    df_print: paged
-  pdf_document: default
+ html_document:
+  theme: lumen
+  toc: true
+  number_sections: true
+  toc_depth: 3
+  toc_float: true
+  df_print: paged
+ pdf_document: default
 ---
 
 ```{r setup, include=FALSE}
@@ -23,48 +26,48 @@ library(tinytex)
 
 1. independent variable aka 'x' variable
 
-    > This is often considered the variable that influences, or causes, changes in the 'y' variable.
+  > This is often considered the variable that influences, or causes, changes in the 'y' variable.
 
 2. dependent variable, outcome variable, aka 'y' variable
 
-    > This is often considered 'the effect' when dealing with "cause effect" relationships.
+  > This is often considered 'the effect' when dealing with "cause effect" relationships.
 
 3. Null Hypothesis
 
-    > Broadly speaking the null hypothesis is a statement or prediction that 'X' will not cause changes in 'Y'.  This can show up in various forms, a simple one is where two groups, a control group and one that receives an experimental medication, are believed to have the same outcomes--that the medication won't work. 
-    
+  > Broadly speaking the null hypothesis is a statement or prediction that 'X' will not cause changes in 'Y'. This can show up in various forms, a simple one is where two groups, a control group and one that receives an experimental medication, are believed to have the same outcomes--that the medication won't work. 
+  
 4. [Alpha](https://en.wikipedia.org/wiki/Significance_level)
 
-    > This is the number of times you are willing to be wrong when doing an experiment.  It's more complicated than this, but if you imagine doing an experiment, where the differences between groups may not be obvious, you should be transparent about your threshold for being wrong.  In Psychology, the tradition is 5%. There is history to this that is worthy of letting go, but it's nonetheless a common threshold. It is saying that if you did the experiment over and over, say 100 times, that 5 times out of a hundred you would find an effect that was just random and therefore **not real.** You can't know for sure, so you say that 5 out of 100 times you would be willing to be wrong.  By the way, this definition I've given you is just a part of what Alpha is.  I have given you basically the [type 1 error](https://en.wikipedia.org/wiki/Type_I_and_type_II_errors#Type_I_error) rate.
+  > This is the number of times you are willing to be wrong when doing an experiment. It's more complicated than this, but if you imagine doing an experiment, where the differences between groups may not be easily discernable, you should articulate your threshold for being wrong. In Psychology, the tradition is 5%. [There is history to this](https://en.wikipedia.org/wiki/Statistical_significance#History), which is worthy of letting go, but it's nonetheless a common threshold. It is saying that if you did the experiment over and over, say 100 times, that 5 times out of a hundred you would find an effect that was just random and therefore **not real.** In a given experiment, you may have found something real, or maybe something random, so you say that 5 out of 100 times you would be willing to be wrong. By the way, this definition I've given you is just a part of what Alpha is. I have given you basically the [type 1 error](https://en.wikipedia.org/wiki/Type_I_and_type_II_errors#Type_I_error) rate.
 
 5. p-value
 
-    > if the null hypothesis is true, the p-value is the probability that the found effect, or one larger, is real.  It's saying that when you find a difference between groups, that the chance of finding that difference (or one larger) has a certain probability, or a p-value---assuming that the null is true.  
+  > if the null hypothesis is true, the p-value is the probability that the found effect, or one larger, is real. It's saying that when you find a difference between groups, that the chance of finding that difference (or one larger) has a certain probability, or a p-value---assuming that the null is true. 
 
 6. Effect Sizes
 
-    > these are statistical efforts at comparing outcomes across different studies.  By taking the experimental properties (sample sizes, demograpics, methods), researchers will conduct a "meta-analysis" that attempts to compare similar studies and their outcomes to see if you can organize, or sort, factors of influence.  For example, in physics, on our planet gravity has the largest effect size over the speed that an object falls from a specific height.  Friction from the air also impacts the speed of decent but it has a smaller "effect".  
+  > these are statistical efforts at comparing outcomes across different studies. By taking the experimental properties (sample sizes, demograpics, methods), researchers will conduct a "meta-analysis" that attempts to compare similar studies and their outcomes to see if you can organize, or sort, factors of influence. For example, in physics, on our planet gravity has the largest effect size over the speed that an object falls from a specific height. Friction from the air also impacts the speed of decent but it has a smaller "effect". 
 
 
 
 # Intro to stats for abnormal psych students
 
-Big idea about research is that it is incredibly rare to perform one study/experiment and to have it change the known literature.  Science is 99.99% incremental.
+Big idea about research is that it is incredibly rare to perform one study/experiment and to have it change the known literature. Science is 99.99% incremental.
 
 So, when you learn about a topic via reading journal articles (experiments) be humble about what you find.
 
-Also, remember the 3 main parts of John Stuart Mills thoughts on Cause and effect.  To establish that you need:
+Also, remember the 3 main parts of John Stuart Mills thoughts on Cause and effect. To establish that you need:
 
-1. Covariance between variables (correlation)
+ 1. Covariance between variables (correlation)
 
-2. Temporal precedence (the cause has to come before the effect
+ 2. Temporal precedence (the cause has to come before the effect
 
-3. All other explanations must be ruled out.
+ 3. All other explanations must be ruled out.
 
-   The last one, 3, is the hard part.  
+   The last one, 3, is the hard part. 
 
 
-# Stat book contents
+## Stat book contents
 
 This is a skeletal outline of most intro stat books:
 
@@ -81,29 +84,25 @@ This is a skeletal outline of most intro stat books:
     Chi-Square
     Effect Sizes
 
-In abnormal psychology you see a lot of linear regressions.  You also see a Effect Sizes.
-
+In abnormal psychology you see a lot of linear regressions. You also see a Effect Sizes.
 
 To have an introductory understanding of regression, you should understand probability and Probability Distributions. 
-
-
 
 So, let's jump into probability distributions by first looking at some graphs.
 
 
 # Graphing with a histogram
 
+Histograms are useful for seeing how small sets of data "look". It often is useful to do this for seeing where your data exists.
 
-Histograms are useful for seeing how small sets of data "look".  It often is useful to do this for seeing where your data exists.
-
-Imagine we wanted to discover how tall people are.  Let us say I can sample 100 people, randomly, from Seattle.  Here they are listed in inches
+Imagine we wanted to discover how tall people are. Let us say I can sample 100 people, randomly, from Seattle. Here they are listed in inches
 
 ```{r height data,echo=F}
 h <- round(rnorm(100,mean=66, sd=1),1)
 print(h)
 ```
 
-We can see this data more easily if we graph it.  There are many ways to, but this is a classic way: The Histogram
+We can see this data more easily if we graph it. There are many ways to, but this is a classic way: The Histogram
 
 ```{r histogram}
 
@@ -112,7 +111,7 @@ abline(v=mean(h),col='blue')
 
 ```
 
-What you should see here is that the vertical 'y' axis is a frequency, a count, while the 'x' axis is the range of scores.  So, from 64 to 64.5 inches tall, there appears to be about `r length(h[h>=64&h<=64.5])` people.  If you look at our original data, you should see this is true:
+What you should see here is that the vertical 'y' axis is a frequency, a count, while the 'x' axis is the range of scores. So, from 64 to 64.5 inches tall, there appears to be about `r length(h[h>=64&h<=64.5])` people. If you look at our original data, you should see this is true:
 
 ```{r sort data,echo=F}
 sort(h)
@@ -120,7 +119,7 @@ sort(h)
 
 And here is the data pulled out so you aren't overtaxing your eyes: `r sort(h[h>=64&h<=64.5])`
 
-**But what I want you to really see is the shape of this histogram.**  It is beginning to look like a bell curve, the classic normal distribution.  If we could sample a bit larger number of people, say 200, you would a shape more close to this normal curve:
+**But what I want you to really see is the shape of this histogram.** It is beginning to look like a bell curve, the classic normal distribution. If we could sample a bit larger number of people, say 200, you would a shape more close to this normal curve:
 
 ```{r More data for histogram,echo=F}
 h.1 <- rnorm(200, mean=66)
@@ -130,70 +129,73 @@ hist(h.1,xlab = 'Height',main = 'histogram of 200 heights in Seattle')
 
 And what about 1000 people? 
 
-```{r  1000 data for histogram,echo=F}
+```{r 1000 data for histogram,echo=F}
 h.1000 <- rnorm(1000, mean=66)
 par(mfrow=c(1,2))
 hist(h.1000,xlab = 'Height',main = 'histogram of 1000 heights in Seattle')
 plot(density(h.1000),xlab="heights",main="Distribution")
 ```
 
-I hope you see where this is going.  Because then the following makes some sense:
+I hope you see where this is going. Because then the following makes some sense:
 
 The area under the curve on the right is the probability of those values on the x axis occurring. 
 
 >To understand why this is, you'll want to take calculus (at least I and II) to understand the Fundamental Theorem of Calculus.
 
-Back to stats, and for example, look **back** at the histogram of 100 people.  We can use the the number of people between 64 and 64.5 inches.  In this case there are `r length(h[h>=64&h<=64.5])`, and since there are 100 people, you can do the quick calculation that `r length(h[h>=64&h<=64.5])` out of 100 is `r length(h[h>=64&h<=64.5])/100`.  If you were to ask the question "what is the chance that someone is between 64 and 64.5 inches tall in our sample", you would say about `r length(h[h>=64&h<=64.5])`% .
+>Also note that the Normal Distribution is just one of many. Consider the binomial, beta, poisson, chi-square, and more. 
 
-The point here is that if you know something about a sample's distribution, you can start making some good guesses about the larger population.  And, this is the cornerstone for [inferential stats](https://en.wikipedia.org/wiki/Statistical_inference), and p-values are suppose to guide us in this work.
+Back to our stats, and, for example, look **back** at the histogram of just 100 people. We can look at the number of people between 64 and 64.5 inches. In this case there are `r length(h[h>=64&h<=64.5])`, and since there are 100 people in this sample, you can do the quick calculation that `r length(h[h>=64&h<=64.5])` out of 100 is `r length(h[h>=64&h<=64.5])/100`. If you were to ask the question "what is the chance that someone is between 64 and 64.5 inches tall in our sample", you would say about `r length(h[h>=64&h<=64.5])`% .
+
+The point here is that if you know something about a sample's distribution, you can start making some good guesses about the larger population. And, this is the cornerstone for [inferential stats](https://en.wikipedia.org/wiki/Statistical_inference), and p-values are suppose to guide us in this work.
 
 # Big leap to correlations
 
-I'm going to load a data set that has 231 cases, people, where they have given data about their personality.  I've no idea about who these people are, though I imagine there is some information online.  
+I'm going to load a data set that has 231 cases, people, where they have given data about their personality. I've no idea about who these people are, though I imagine there is some information online. 
+
 ```{r load data, echo=T}
 datafilename <- "http://personality-project.org/r/datasets/maps.mixx.epi.bfi.data"
-person.data  <- read.table(datafilename,header=TRUE)  #read the data file
+person.data <- read.table(datafilename,header=TRUE) #read the data file
 str(person.data)
 ```
 
-We've talked about neuroticism in the context of the Big 5 OCEAN but not of the PEN, a different trait theory about personality.  The N in PEN stands for neuroticism, and so let's learn about the correlation.  
+We've talked about neuroticism in the context of the Big 5 OCEAN but not of the PEN, [a different trait theory about personality](https://en.wikipedia.org/wiki/Hans_Eysenck#Model_of_personality). The N in PEN stands for neuroticism, and so let's learn about the correlation. 
 
-First, it helps to plot the data.  On the x-axis we'll put the big 5 Neuroticism and the y-axis will have the PEN.
+First, it helps to plot the data. On the x-axis we'll put the big 5 Neuroticism and the y-axis will have the PEN.
 
 ```{r plot neuroticisms, echo=F}
 plot(person.data$bfneur,person.data$epiNeur, xlab='Big 5 Neuroticism', ylab='Pen Neuroticism')
 ```
 
-This plot shows the data leaning, yes?  This is visually describing a "positive" correlation:  when one variable moves, the other variable moves **in the same direction**.  If they moved in opposite directions, one goes, up the other down, you'd have a negative correlation.  If the two variables were unrelated, then the correlation would look much like a big scatter of data points with no obvious trend.  
+This plot shows the data leaning, yes? This is visually describing a "positive" correlation: when one variable moves, the other variable moves **in the same direction**. If they moved in opposite directions, one goes, up the other down, you'd have a negative correlation. If the two variables were unrelated, then the correlation would look much like a big scatter of data points with no obvious trend. 
 
-A correlation is a numerical representation of these trends.  It exists as a number between -1 ... 0 ... +1. For this data set, the correlation happens to be `r round(cor(person.data$bfneur,person.data$epiNeur),2)`
+[A correlation is a numerical representation of these trends](https://en.wikipedia.org/wiki/Correlation_and_dependence). It exists as a number between -1 ... 0 ... +1. For this data set, the correlation happens to be `r round(cor(person.data$bfneur,person.data$epiNeur),2)`
 
-You can also visualize a correlation as the best fitting line of this data.  And this is *basically* what linear regression is--though once you get more than 2 variables it's not the simple.  
+You can also visualize a correlation as the best fitting line of this data. And this is *basically* what linear regression is--though once you get more than 2 variables it's not the simple. 
 
 # Linear Regression
 
-You may remember in past math courses something about the best fitting line.  You more likely remember one of the formulas for a line is $y=mx+b$.
+You may remember in past math courses something about the best fitting line. You more likely remember one of the formulas for a line is $y=mx+b$.
 
-Well, a regression is sort of like finding the variable 'm'.  It's not the same thing, but if you accept that there are mathematical techniques to find a 'best fitting line', well, this would be a linear regression.  If you want to know what 'best fitting' is, you'll need to take some stat classes.  
+Well, a regression is sort of like finding the variable 'm'. It's not the same thing, but if you accept that there are mathematical techniques to find a 'best fitting line', well, this would be a linear regression. If you want to know what 'best fitting' is, you'll need to take some stat classes. 
 
 But here is that line for these two variables:
 
 ```{r linear regression line on data,echo=F}
-Neurot.lm.1  <- lm(data=person.data,epiNeur~bfneur)
+Neurot.lm.1 <- lm(data=person.data,epiNeur~bfneur)
 
 plot(person.data$bfneur,person.data$epiNeur, xlab='Big 5 Neuroticism', ylab='Pen Neuroticism')
 abline(Neurot.lm.1)
 ```
 
-You should notice the line doesn't fit over every single data point.  What it is trying to do is minimize the overall difference scores from the line to _each of the data points_.  There are an infinite number of lines that could be drawn over this set of data, but this line has special meaning.
+You should notice the line doesn't fit over every single data point. What it is trying to do is minimize the overall difference scores from the line to _each of the data points_. There are an infinite number of lines that could be drawn over this set of data, but this line has special meaning.
 
-You can do these calculations by hand with small data sets and when you using just 2 variables. More variables requires linear algebra, and the more variables you add, the time it takes to solve by hand is exponential. Literally.  
+You can do these calculations by hand with small data sets and when you using just 2 variables. More variables requires linear algebra, and the more variables you add, the time it takes to solve by hand is exponential. Literally. 
 
-Yay for computers.  Cuz the fast.  
+Yay for computers. Cuz the fast. 
 
-This best fitting line represents the line where the distance of it from each of the data points the smallest compared to all other lines.  
+This best fitting line represents the line where the distance of it from each of the data points the smallest compared to all other lines. 
 
-This sort of line often implies a causal relationship, or at least that one variable 'X' impacts the other variable 'Y'.  Maybe it's causal, maybe there are other variables that are doing the 'causing'.  Maybe it's dumb random chance.  You've heard the saying that correlation doesn't equal causation?  Well, that's a thing to worry about when evalauting studies (see John Stuart Mill above).  (By the way, technically it's "correlation doesn't **imply** causation".)
+This sort of line often implies a causal relationship, or at least that one variable 'X' impacts the other variable 'Y'. Maybe it's causal, maybe there are other variables that are doing the 'causing'. Maybe it's dumb random chance. You've heard the saying that correlation doesn't equal causation? Well, that's a thing to worry about when evalauting studies (see John Stuart Mill above). (By the way, technically it's "correlation doesn't **imply** causation".)
 
 ## Linear Regression output
 
@@ -203,13 +205,19 @@ When you see a paper cite a linear regression the output will look something lik
 summary(Neurot.lm.1)
 ```
 
-There is a lot here, but the key number here is the "beta" Estimate for bfneur, `r round(Neurot.lm.1$coefficients[2],5)`, which basically says that as x moves one unit, y will move `r round(Neurot.lm.1$coefficients[2],5)` units up.  Seems small, but in this case it is significant.  Imagine a scenario when you took the same variable and plotted it against itself:
+There is a lot here, but the key number here is the "beta" Estimate for bfneur, `r round(Neurot.lm.1$coefficients[2],5)`, which basically says that as x moves one unit, y will move `r round(Neurot.lm.1$coefficients[2],5)` units up. Seems small, but in this case it is significant. 
+
+## Adding some noise
+
+Imagine a scenario when you took the same variable and plotted it against itself:
 
 ```{r plot bfneur to itself,echo=T}
 plot(person.data$bfneur,person.data$bfneur)
 ```
 
-It's a straight line.  Now let's add a little variation and run a regression to see how big the Beta coefficient gets.  I'm just trying to make the two data sets not equal without losing the correlation.
+It's a straight line. Now let's add a little noise and run a regression to see how big the Beta coefficient gets. I'm just trying to make the two data sets not equal without losing the correlation.  If they were equal, the program won't work.
+
+What you see next is the Big5 Neuroticism regressed on to itself, but just after adding noise to one of them.  The data points still follow the same line as above, but with some noise.
 
 ```{r linear regress on bfneur, echo=T}
 bfneur.noise <- person.data$bfneur+rnorm(length(person.data$bfneur),.1,3)
@@ -218,31 +226,52 @@ Neurot.lm.noise<- lm(bfneur.noise~person.data$bfneur)
 summary(Neurot.lm.noise)
 ```
 
-The summary output shows `r round(Neurot.lm.noise$coefficients[2],5)` for the beta coefficient. Basically a unit move of 1 for every move of 1.  **Beta coefficients can be larger than 1 whereas correlations must be between -1 and +1.**  
+The summary output shows `r round(Neurot.lm.noise$coefficients[2],5)` for the beta coefficient. Basically a unit move of 1 for every move of 1. **Beta coefficients can be larger than 1 whereas correlations must be between -1 and +1.** So, some situations are that a variable moves 1 unit, and the outcome variable moves a bunch (more than 1).
 
-To see how correlations are related to the beta coefficient, and if you understand what a standard deviation is, here is the conversion, which only works for any x & y pairing.  Multiple X's won't work this way. 
+## Beta coefficients
+
+Let me say this again, when one performs a linear regression, you will get several 'Beta' Coefficients that basically say how much the outcome variable will change **because** of the X variable. Let's try an example.
+
+### Multiple regression
+
+So, in the data set we've been using, one of the variables is the Beck Depression Inventory, aka [BDI](https://en.wikipedia.org/wiki/Beck_Depression_Inventory) .  It's a well known and accepted questionnaire that can assess whether a person is suffering with depression.  
+
+Let's say we wanted to use the Neuroticism variables along with the Big 5 agreeable varialbe to see if any of them are related to the BDI.  
+
+```{r run multiple linear regression}
+lm.m<- lm(data=person.data,bdi~epiNeur+bfagree)
+summary(lm.m)
+```
+
+The output shows 2 beta coefficients: `r lm.m$coefficients[2:3]`, and they are "significant".  This means that as the PEN Neuroticism moves 1 unit, the BDI score will move (in this case up) `r lm.m$coefficients[2]` units.  That might seem small, but there are only 63 points possible in the BDI, and 23 units in the PEN Neuroticism.  So, a little bit of movement is actually quite a bit.  Is it the only thing? Hardly, but it's consistent with lots of research.  
+
+## Relationship of correlation to Beta coefficients
+
+### This is really getting into the weeds, but some may find it useful.
+
+To see how correlations are related to the beta coefficient, and if you understand what a standard deviation is, here is the conversion, which only works for any x & y pairing. Multiple X's won't work this way.
 
 ```{r create beta coefficient from cor,echo=F}
 cor.bfneur.epin <- cor(person.data$epiNeur,person.data$bfneur)
 ```
 
-Stat Name  | Statistic
+Stat Name | Statistic
 ------------- | -------------
-Correlation  | `r cor.bfneur.epin`
-Standard Dev for PEN Neur  | `r sd(person.data$epiNeur)`
-Standard Dev for b5 Neur  | `r sd(person.data$bfneur)`
-Cor times (SD.pen / SD.bf)  | `r cor.bfneur.epin*sd(person.data$epiNeur)/sd(person.data$bfneur)`
+Correlation | `r cor.bfneur.epin`
+Standard Dev for PEN Neur | `r sd(person.data$epiNeur)`
+Standard Dev for b5 Neur | `r sd(person.data$bfneur)`
+Cor times (SD.pen / SD.bf) | `r cor.bfneur.epin*sd(person.data$epiNeur)/sd(person.data$bfneur)`
 ----
 
-So, a linear regression is a process to find a best fitting line over data and for 2 variables gives you a visual image of a correlation.  You can have many variables when doing this and such a process will show you which variables have more or less influence over the outcome variable.  
+So, a linear regression is a process to find a best fitting line over data and for 2 variables gives you a visual image of a correlation. You can have many variables when doing this and such a process will show you which variables have more or less influence over the outcome variable. 
 
 # Return of the P value
 
-So to try and give some intuition about a p-value, I often use coin-flipping as an example.  
+To try and give some intuition about a p-value, I often use coin-flipping as an example. 
 
-Imagine a fair coin, where getting Heads or Tails is equally likely.  50/50.
+Imagine a fair coin, where getting Heads or Tails is equally likely. 50/50.
 
-If you flipped the coin 10 times, would you expect to get 5 of each side?  Would you be upset if it were 6 to 4?  What if you flipped the coin 1,000 times?  Would you get 500 Heads? I can simualte this.  Imagine that heads = '1' and tails ='0'.
+If you flipped the coin 10 times, would you expect to get 5 of each side? Would you be upset if it were 6 to 4? What if you flipped the coin 1,000 times? Would you get 500 Heads? I can simualte this. Imagine that heads = '1' and tails ='0'.
 
 ```{r simulate 1000 coin tosses, echo=T}
 coin_set<- rbinom(1000,1,.5)
@@ -252,42 +281,45 @@ abline(h=sum(coin_set),col='red')
 
 Above you should see there are `r sum(coin_set)` heads. 
 
-Seems like a fair coin, but notice that if we did this over and over we wouldn't always get 50% heads/tails.  Let's do this again with a smaller trial, 10 coin flips, but then let's do this 1000 times.  So, I'll do 1000 simulations of 10 coin flips, and so will have 1000 counts of 10 coin flips.  
+Seems like a fair coin, but notice that if we did this over and over we wouldn't always get 50% heads/tails. Let's do this again with a smaller trial, 10 coin flips, but then let's do this 1000 times. So, I'll do 1000 simulations of 10 coin flips, and so will have 1000 counts of 10 coin flips. 
 
 ```{r simulate 1000 10, ech0=T}
 d <- matrix(data=replicate(1000,rbinom(10,1,.5)),ncol=10)
 head(apply(d,1,sum),10)
 ```
 
-So, what you are seeing here is the first 10 simulations, and each number represents the sum of "heads" in ten coin tosses.  You should see that I'm just showing you 10 of these 1000 summations.  The first sum is `r sum(d[1,1:10])`.  That means of those 10 flips, `r sum(d[1,1:10])` of them were 'heads'.  If I plot the whole 1000 simulations, you will see a nice bell curve, with most of these coin flips being between 3 and 6:
+So, what you are seeing here is the first 10 simulations, and each number represents the sum of "heads" in ten coin tosses. You should see that I'm just showing you 10 of these 1000 summations. The first sum is `r sum(d[1,1:10])`. That means of those 10 flips, `r sum(d[1,1:10])` of them were 'heads'. If I plot the whole 1000 simulations, you will see a nice bell curve, with most of these coin flips being between 3 and 6:
 
 ```{r plot coin sims, echo=TRUE}
 hist(apply(d,1,sum),main='histogram of coin flips',xlab='The number of heads found in 10 flips')
 abline(v=mean(apply(d,1,sum)),col='blue')
 ```
 
-In this case the mean of these flips is denoted by the blue line, and so probably reflects your intuition about coin toss.  But notice the huge range of outcomes.  
+In this case the mean of these flips is denoted by the blue line, and so probably reflects your intuition about coin toss. But notice the huge range of outcomes. 
 
-Even though the average of flipping all these coins is very close to 5 out of 10, there were some trials where you got 2 heads, and some cases 9 heads.  
+Even though the average of flipping all these coins is very close to 5 out of 10, there were some trials where you got 2 heads, and some cases 9 heads. 
 
-And yet this is coming from a "fair" coin.  --okay it's computer simulated, but you get the idea:
+And yet this is coming from a "fair" coin. --okay it's computer simulated, but you get the idea:
 
-**p-values tell you how likely you would find a difference assuming the null is true** and in this case, you can see that even with a fair coin, it's not impossible to get on any one 10 toss trial a very rare outcome.  If you flipped a coin 10 times and got 2 heads, you could very well assume that it's still a fair coin.  
+**p-values tell you how likely you would find a difference assuming the null is true** and in this case, you can see that even with a fair coin, it's not impossible to get on any one 10 toss trial a very rare outcome. If you flipped a coin 10 times and got 2 heads, you could very well assume that it's still a fair coin. 
 
-And that is the problem with doing research.  If you find a difference between 2 groups, is that difference real?  The P-value is saying that assuming the groups are the same, what is the chance that I'd get a rare event? 
+And that is the problem with doing research. If you find a difference between 2 groups, is that difference real? The P-value is saying that assuming the groups are the same, what is the chance that I'd get a rare event? 
 
-In coin terms, I'm asking, under the assumption of a fair coin (null hypothesis) I have an equal chance of heads or tails, **what is the chance that I get 8 or more heads?**  The p-value gives you the chance of 8, 9, and 10 heads (remember the 'more extreme' phrase).  And so, you just have to add up all the 10 coin sets that had 8 or more heads. 
+In coin terms, I'm asking, under the assumption of a fair coin (null hypothesis) I have an equal chance of heads or tails, **what is the chance that I get 8 or more heads?** The p-value gives you the chance of 8, 9, and 10 heads (remember the 'more extreme' phrase). And so, you just have to add up all the 10 coin sets that had 8 or more heads. 
 
 ```{r p value for 8 or more heads, include=F}
 coin_totals<- apply(d,1,sum)
 length(coin_totals[coin_totals>7])/length(coin_totals)
 ```
 
-And when you do that, you find that there are, out of the 1000 simulations, `r length(coin_totals[coin_totals>7])` of the simulations had 8 or more heads.  And if you divide that number by the number of simulations, you get your the p-value for this little experiment, and it happens to be `r length(coin_totals[coin_totals>7])/1000`.
+And when you do that, you find that there are, out of the 1000 simulations, `r length(coin_totals[coin_totals>7])` of the simulations had 8 or more heads. And if you divide that number by the number of simulations, you get the p-value for this little experiment, and it happens to be `r length(coin_totals[coin_totals>7])/1000`.
 
-This is saying that if I flip a coin a bunch of times, `r length(coin_totals[coin_totals>7])/10`%. of the trials will have 8 or more heads.  
+This is saying that if I flip a coin a bunch of times, `r length(coin_totals[coin_totals>7])/10`%. of the trials will have 8 or more heads. 
 
-I can prove this by running a real statistical test using this software, called the binomal test, and in the code below you should see that this software takes the successes (number heads) and failures (the number of tails), and calcualtes a p-value, which you should see at the bottom of the read out.  I hope my calculation above matches!  You may notice the p-value in the read out.  That's calculating how likely getting 8 or more heads is coming from a fair coin.  Similar question, but a different hypothesis. 
+
+## Check on my logic using the binomial.test
+
+I can prove this outcome by running a real statistical test using this software, called the binomal test, and in the code below you should see that this software takes the successes (number heads) and failures (the number of tails), and calcualtes a p-value, which you should see at the bottom of the read out. I hope my calculation above matches! You may notice the p-value in the read out. That's calculating how likely getting 8 or more heads is coming from a fair coin. Similar question, but a different hypothesis. 
 
 ```{r binom test,echo=T}
 heads8 <- length(coin_totals[coin_totals>7])
@@ -295,5 +327,11 @@ tails8 <- 1000-length(coin_totals[coin_totals>7])
 binom.test(x=c(heads8,tails8))
 ```
 
+## P value summary
+
+All this is saying is that when you count things, even if you have a good idea of how many things there are, you will not have a perfect count.  Groups will be different.  A P value tells you how likely you will find that difference with the assumption that there should be no difference.  Again, flip a fair coin 100, and it **should** come out to 50 heads, but how often will you get 51 or more?  Well, p-values tell you that. 
 
 
+# A linear regression example
+
+Here I hope to walk through an example related to Bipolar disorder. 
